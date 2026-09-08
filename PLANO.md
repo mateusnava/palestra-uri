@@ -16,7 +16,8 @@ Recomendação: fique com o primeiro. Ele promete mudança sem anunciar o fim da
 
 - **Quem:** Mateus. Começou a trabalhar em 2006. Entrou na graduação em 2007. Formou-se em 2011. Volta à universidade como ex-aluno, não como guru.
 - **Para quem:** acadêmicos — estudantes, professores, talvez recém-formados. Sala que ainda valoriza disciplina, prova, maratona, base.
-- **Por quê:** contar o que a caminhada mostrou, sem invalidar o que a universidade ensina. A tese não é “a faculdade atrasou”. É o contrário.
+- **Por quê:** compartilhar o que a caminhada ensinou, sem invalidar o que a universidade ensina. A tese não é “a faculdade atrasou”. É o contrário.
+- **Postura:** não é exemplo, nem trajetória a copiar. É um relato. O que a sala fizer com isso é dela.
 
 ## Duração
 
@@ -65,13 +66,15 @@ Não é um currículo narrado ano a ano. Cada época entra para mostrar **uma mu
 ## Tom
 
 - Colega que voltou, não palestrante de palco.
-- História > conselho. O conselho só aparece no fim, e cabe em três frases.
+- **Não sou exemplo.** Diga cedo, e de novo no fim. A sala não veio receber um modelo de carreira. Veio ouvir o que uma caminhada ensinou.
+- Relato > conselho. Quando algo parecer regra, vire no “o que ficou para mim”.
 - Orgulho sem desfile. Duas aquisições são fato do ecossistema, não troféu pessoal.
 - Respeito à sala. Professores na platéia. A graduação é personagem positiva.
 - Humor baixo, concreto: revista no correio, manual da NF-e, first name no Slack das 23h.
 
 ## O que precisa aparecer
 
+- Cedo e no fim: você não é exemplo. É um relato do que aprendeu.
 - A velocidade da mudança até chegarmos aqui.
 - A importância das bases (maratona, conceitos). Sem isso, a palestra trai o público.
 - NF-e como ofício artesanal: manual, lei, time.
@@ -90,6 +93,8 @@ Não é um currículo narrado ano a ano. Cada época entra para mostrar **uma mu
 - Lista de tecnologias como se fosse o ponto.
 - Detalhe confidencial de Cursor, Miro ou das startups. Fale o arco, não o backlog.
 - Tom de “eu venci, vocês ainda não”.
+- Tom de exemplo: “façam como eu”, “o caminho é esse”, “se eu consegui, vocês também”.
+- Lista de mandamentos no fecho. O fecho é o que você aprendeu, não o que a sala deve ser.
 - Jargão de influencer: 10x, crush, unlock, “o futuro do trabalho” vazio.
 
 ## Como falar de IA para acadêmicos
@@ -104,9 +109,9 @@ A ponte com 2008 ajuda: na NF-e, o difícil não era digitar XML. Era saber se a
 
 ## Como falar da carreira internacional e de SF
 
-Não transforme em tutorial de visto.
+Não transforme em tutorial de visto. Não transforme em “o caminho é ir embora”.
 
-Fale de três coisas que o estudante não lê no tutorial:
+Fale de três coisas que o estudante não lê no tutorial — como observação, não como receita:
 
 1. **O trabalho vira conversa em outro idioma, o dia inteiro.** Código é o fácil. Contexto, nuance e escrita é o jogo.
 2. **Gente boa é o prêmio.** Santa Monica valeu pela rede, não pelo CEP.
@@ -116,7 +121,7 @@ Miro é o agora. Feche o arco lá: continua sendo software, gente e produto. A l
 
 ## Ser uma pessoa legal (sem virar cartilha)
 
-Não reserve um slide moral no meio. Deixe o fio aparecer nas histórias e nomeie no fim.
+Não reserve um slide moral no meio. Deixe o fio aparecer nas histórias e nomeie no fim — como aprendizado seu, não como preceito.
 
 - 2008: sem Stack Overflow da NF-e, o time era o oráculo.
 - 2021: no exterior, lembram como você fez a outra pessoa pensar com clareza — e se deu gosto trabalhar com você.
@@ -130,7 +135,7 @@ Não reserve um slide moral no meio. Deixe o fio aparecer nas histórias e nomei
 3. Validação da universidade (as bases salvaram a caminhada).
 4. Ampliação (Brasil → mundo → SF).
 5. Tensão (IA muda o ofício; não mata o ofício).
-6. Aterrissagem (três coisas que ficam).
+6. Aterrissagem (três coisas que ficaram para você — sem mandar a sala viver isso).
 7. Convite (fica para conversar).
 
 ## O que você ainda pode preencher
@@ -148,8 +153,8 @@ Nada disso bloqueia o plano. Só deixa o roteiro mais seu.
 
 ## Critério de sucesso
 
-A sala sai com três ideias, não com o seu LinkedIn:
+A sala sai com o que você viu, não com um modelo de Mateus:
 
 1. A mudança foi brutal e continua.
-2. Por isso a base e o caráter importam mais, não menos.
-3. Dá para construir uma carreira internacional sem abandonar o que se aprendeu aqui — e sem achar que linguagem é destino.
+2. Nessa caminhada, base e relação pesaram mais do que stack.
+3. Nada disso é receita. É o que um ex-aluno aprendeu — e oferece para a sala usar, ou não.

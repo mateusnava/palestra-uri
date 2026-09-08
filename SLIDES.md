@@ -1,6 +1,6 @@
 # Mapa dos slides
 
-Deck enxuto: **22 slides**. Pouca palavra na tela. História na boca.
+Deck enxuto: **23 slides**. Pouca palavra na tela. História na boca.
 
 Estilo: fundo quieto, tipo grande, um pensamento por slide. Sem print de código. Sem print de LinkedIn. Linha do tempo entra uma vez só.
 
@@ -23,7 +23,7 @@ Mateus
 Palestra na [universidade], [data]
 
 **Fala**  
-Apresente-se em duas frases. Não abra o currículo.
+Apresente-se em duas frases. Não abra o currículo. Já deixe no ar: isto é um relato, não um modelo.
 
 **Não colocar**  
 Lista de cargos.
@@ -45,24 +45,41 @@ Foto de formatura a menos que queira calor humano de verdade. Se usar, uma só.
 
 ---
 
-## 3. A tese
+## 3. O contrato
+
+**Tela**
+
+Não sou exemplo.
+
+Vim só compartilhar  
+o que aprendi nisso tudo.
+
+**Fala**  
+Diga sem rodeio. Não é caminho para copiar. Não é sequência certa. O que a sala fizer com o relato é dela. Este slide não é modestia de palco: é o acordo da palestra.
+
+**Não colocar**  
+Emoji, “disclaimer”, asterisco jurídico.
+
+---
+
+## 4. A tese
 
 **Tela**
 
 Tudo ficou irreconhecível.
 
-O que te segura em pé  
-continua sendo base, julgamento e gente.
+O que me segurou em pé  
+foi base, julgamento e gente.
 
 **Fala**  
-Diga que o resto da palestra só ilustra isso. Peça que guardem a frase.
+Diga que o resto só ilustra o que *você* viu. Não peça que a sala grave como regra.
 
 **Não colocar**  
 Três colunas de “agenda”. A tese já é a agenda.
 
 ---
 
-## 4. 2006
+## 5. 2006
 
 **Tela**
 
@@ -78,7 +95,7 @@ Logo do Delphi. Capa de revista só se tiver direito e for uma imagem, não um a
 
 ---
 
-## 5. Pesquisar era esperar
+## 6. Pesquisar era esperar
 
 **Tela**
 
@@ -88,11 +105,11 @@ Atalho nenhum.
 O músculo era sentar com o problema.
 
 **Fala**  
-Ponte com o agora: vocês terão o contrário — resposta demais. O músculo passa a ser escolha.
+Ponte com o agora, como observação: a geração deles vive o contrário — resposta demais. O músculo que você foi forçado a ter hoje é escolha. Sem “vocês têm que”.
 
 ---
 
-## 6. 2007
+## 7. 2007
 
 **Tela**
 
@@ -103,7 +120,7 @@ Entrada na graduação. Anuncie que esta palestra não é um adeus à sala de au
 
 ---
 
-## 7. Maratona e bases
+## 8. Maratona e bases
 
 **Tela**
 
@@ -120,7 +137,7 @@ Ranking, medalha, nome de juiz, a menos que haja um professor na sala e você qu
 
 ---
 
-## 8. Recado ao Mateus de 2007
+## 9. Recado ao Mateus de 2007
 
 **Tela**
 
@@ -130,11 +147,11 @@ Você vai gastá-la em empregos
 que ainda não existem.
 
 **Fala**  
-Uma pausa. Olhe a sala. Este slide é para quem está ouvindo que faculdade atrasa.
+Uma pausa. Deixe claro: é recado para você, o de 2007. Se servir para alguém na sala, ótimo. Se não, também.
 
 ---
 
-## 9. 2008 — NF-e
+## 10. 2008 — NF-e
 
 **Tela**
 
@@ -148,7 +165,7 @@ Java Web. O país inventando o documento em público. Manual, lei, time. Stack O
 
 ---
 
-## 10. O que aquele projeto ensinou
+## 11. O que aquele projeto ensinou
 
 **Tela**
 
@@ -163,7 +180,7 @@ Quem não entende o domínio vira digitador — em 2008 e agora. Plante a sement
 
 ---
 
-## 11. 2010 — outro tipo de difícil
+## 12. 2010 — outro tipo de difícil
 
 **Tela**
 
@@ -181,7 +198,7 @@ Arquitetura da migração. Vocês não estão numa review.
 
 ---
 
-## 12. 2012 — simplicidade
+## 13. 2012 — simplicidade
 
 **Tela**
 
@@ -198,18 +215,18 @@ Sintaxe. Gemfile. Comparativo Rails vs. Java.
 
 ---
 
-## 13. A pergunta que ficou
+## 14. A pergunta que ficou
 
 **Tela**
 
 Isso precisa ser tão complicado?
 
 **Fala**  
-Essa pergunta viajou com você até o Miro e até a IA. É o único conselho técnico que você quer deixar.
+Essa pergunta viajou com você até o Miro e até a IA. É preferência sua, não conselho técnico.
 
 ---
 
-## 14. Linha do tempo
+## 15. Linha do tempo
 
 **Tela**
 
@@ -230,7 +247,7 @@ Logos de todas as empresas. Uma linha basta.
 
 ---
 
-## 15. 2021 — a carreira atravessa a fronteira
+## 16. 2021 — a carreira atravessa a fronteira
 
 **Tela**
 
@@ -247,7 +264,7 @@ Tutorial de visto. Foto de palmeira.
 
 ---
 
-## 16. 2024 — o relógio de San Francisco
+## 17. 2024 — o relógio de San Francisco
 
 **Tela**
 
@@ -265,7 +282,7 @@ Valuation, gossip, produto interno, nome da startup se você não quiser publici
 
 ---
 
-## 17. O que se transfere
+## 18. O que eu vi se repetir
 
 **Tela**
 
@@ -277,11 +294,11 @@ Gentileza firme.
 Aqui ou na Califórnia.
 
 **Fala**  
-Evite a fábula do “precisa ir embora”. O padrão é transferível. Em SF, ser alguém com quem dá para construir é vantagem, não cartilha.
+Não é “precisa ir embora”. Não é “façam como eu”. É o que você viu se repetir. Em SF, gente com quem dava para construir era mais rara que talento.
 
 ---
 
-## 18. A IA
+## 19. A IA
 
 **Tela**
 
@@ -293,7 +310,7 @@ Anuncie o cuidado: palestra para acadêmicos. A frase da internet é preguiçosa
 
 ---
 
-## 19. A frase que esta sala não vai ouvir
+## 20. A frase que esta sala não vai ouvir
 
 **Tela**
 
@@ -308,7 +325,7 @@ Ponte: NF-e — XML fácil, lei difícil. Hoje — patch fácil, produção dif�
 
 ---
 
-## 20. Por isso a base não envelheceu
+## 21. Por isso a base não envelheceu
 
 **Tela**
 
@@ -317,27 +334,27 @@ caro é saber se aquele texto
 deveria existir.
 
 **Fala**  
-Vocês não estão atrasados por estudar. Este é o lugar que ainda insiste que entender vem antes de gerar.
+Na sua história, estar aqui não foi atraso. Foi o lugar que insistiu que entender vem antes de gerar. Ofereça isso como leitura, não como veredito.
 
 ---
 
-## 21. O que fica
+## 22. O que ficou para mim
 
 **Tela**
 
-1. Base viaja. Stack não.
-2. Simplicidade é competência.
-3. Seja uma pessoa legal de verdade.
+1. A base viajou. A stack, não.
+2. Simplicidade me salvou mais vezes.
+3. Gente com quem dá para pensar junto.
 
-Relação sobrevive a framework,  
-a fronteira e a aquisição.
+Não é caminho.  
+É o que eu aprendi.
 
 **Fala**  
-Feche as três. Não acrescente uma quarta. Diga que stacks vêm e vão — e que o Mateus de 2011 não reconhece o mundo de agora, e tudo bem.
+Repita: não sou exemplo. Três aprendizados seus, não regras da sala. A caminhada deles não precisa parecer com a sua.
 
 ---
 
-## 22. Obrigado
+## 23. Obrigado
 
 **Tela**
 
@@ -360,10 +377,10 @@ QR code para cinco redes. Um canal chega.
 
 Use esta ordem e jogue o resto fora:
 
-1, 3, 4, 6, 7, 9, 12, 14, 15, 16, 18, 19, 20, 21, 22  
-(e, se couber, o 13 no lugar do 12)
+1, 3, 4, 5, 7, 8, 10, 13, 15, 16, 17, 19, 20, 21, 22, 23  
+(e, se couber, o 14 no lugar do 13)
 
-Corte Vivo. Corte o recado ao Mateus de 2007 como slide — diga numa frase no 7.
+Corte Vivo. Corte o recado ao Mateus de 2007 como slide — diga numa frase no 8. **Não corte o slide 3.** É o acordo da palestra.
 
 ---
 
@@ -371,11 +388,11 @@ Corte Vivo. Corte o recado ao Mateus de 2007 como slide — diga numa frase no 7
 
 - Um tipo só, grande. Título no máximo duas linhas.
 - Anos à esquerda, sempre iguais: 2006, 2007, 2008, 2010, 2012, 2021, 2024, hoje.
-- Cor: uma só ênfase. O slide da tese e o slide “ainda se programa” podem carregar essa ênfase. O resto, quieto.
+- Cor: uma só ênfase. O slide da tese e o slide “ainda se programa” podem carregar essa ênfase. O resto, quieto. O slide 3 (“não sou exemplo”) fica sóbrio — sem ironia visual.
 - Sem ícone de cérebro para IA. Sem robô. A palestra já resiste ao clichê no texto; o visual não pode traí-la.
-- Slide 14 (linha do tempo) é o único que pode parecer “apresentação de consultoria”. Deixe-o sóbrio.
+- Slide 15 (linha do tempo) é o único que pode parecer “apresentação de consultoria”. Deixe-o sóbrio.
 - Não anime bullet por bullet. Se precisar de ritmo, troque de slide.
 
 ## O que o deck não é
 
-Não é portfólio. Não é aula de carreira internacional. Não é keynote de IA. É uma caminhada com tese. Se um slide não serve à tese, ele sobra.
+Não é portfólio. Não é aula de carreira internacional. Não é keynote de IA. Não é “como chegar onde eu cheguei”. É um relato com tese. Se um slide não serve à tese, ele sobra.

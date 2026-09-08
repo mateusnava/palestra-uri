@@ -1,6 +1,6 @@
 # Palestra: o que mudou (e o que não mudou)
 
-Roteiro e plano de slides para a palestra de **Mateus** na universidade onde se formou.
+Roteiro e plano de slides para a palestra de **Mateus** na universidade onde se formou. O tom é de relato: compartilhar o que a caminhada ensinou, sem se colocar como exemplo.
 
 Por enquanto, tudo é textual. Nenhum slide visual foi produzido.
 

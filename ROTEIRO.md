@@ -8,15 +8,17 @@ Fale como conversa. Os títulos dos blocos não se dizem em voz alta.
 
 ## 1. Abertura — 3 min
 
-Eu me chamo Mateus. Em 2007 eu sentei em cadeiras como as de vocês. Em 2011 eu saí daqui com o diploma. Entre um ponto e outro — e depois deles — o ofício em que eu trabalho mudou tantas vezes que, se eu contar só a lista de tecnologias, a palestra acaba e vocês não levam nada.
+Eu me chamo Mateus. Em 2007 eu sentei em cadeiras como as de vocês. Em 2011 eu saí daqui com o diploma. Entre um ponto e outro — e depois deles — o ofício em que eu trabalho mudou tantas vezes que, se eu contar só a lista de tecnologias, a palestra acaba e não sobra conversa.
 
-Então eu não vim mostrar um currículo. Vim contar o que eu vi mudar, e o que eu vi ficar.
+Antes de qualquer história, uma coisa que eu preciso deixar clara: **eu não sou exemplo.** Não vim trazer um caminho para copiar. Não vim dizer que a minha sequência está certa. Vim só compartilhar o que eu aprendi nisso tudo — o que ficou, o que eu errei de ler, o que eu vi mudar. O que vocês fazem com isso é de vocês.
 
-Uma frase para vocês guardarem cedo, porque o resto é ilustração:
+Também não vim mostrar um currículo. Vim contar o que eu vi.
 
-**Tudo ficou irreconhecível. O que te segura em pé continua sendo base, julgamento e gente.**
+Uma frase que organiza o relato, não que resume a vida de ninguém:
 
-Se alguém vier falar comigo no fim perguntando qual linguagem aprender, eu vou responder. Mas essa não é a pergunta cara. A cara é: o que ainda vale quando a ferramenta da década seguinte ainda não tem nome?
+**Tudo ficou irreconhecível. O que me segurou em pé, vezes demais, foi base, julgamento e gente.**
+
+Se alguém no fim perguntar qual linguagem aprender, eu conto o que eu faria no lugar de vocês — como opinião, não como mapa. A pergunta que me perseguiu foi outra: o que ainda vale quando a ferramenta da década seguinte ainda não tem nome?
 
 ---
 
@@ -30,7 +32,7 @@ Naquele momento, a informação era escassa. O código de outra pessoa era escas
 
 O ofício era artesanal por falta de opção. Havia talento. Havia menos atalho.
 
-Se vocês hoje acham que “pesquisar” é um verbo barato, lembrem que há vinte anos pesquisar era esperar o correio. Isso importa porque a geração de vocês vai viver o contrário: resposta imediata, o tempo todo, inclusive quando a resposta estiver errada. O músculo que eu fui forçado a ter — sentar com o problema — vocês vão ter que escolher ter.
+Eu conto isso para calibrar, não para dar lição. Há vinte anos, pesquisar era esperar o correio. A geração de vocês vive o contrário: resposta imediata, o tempo todo, inclusive quando a resposta está errada. O músculo que eu fui forçado a ter — sentar com o problema — hoje virou escolha. Foi isso que eu aprendi, olhando para trás.
 
 ---
 
@@ -46,9 +48,9 @@ Eu mudei de stack várias vezes. Desktop para Java Web. Java para Rails. Rails p
 
 A maratona, para mim, não foi só medalha e noite virada. Foi um jeito de pensar: recortar o problema, provar para mim mesmo que eu entendi, aceitar que existe solução feia e solução certa, e que as duas não são a mesma.
 
-Para quem está no meio da graduação e já ouviu que “a faculdade atrasa”: a faculdade não te prepara para o framework do semestre. Ela te prepara para o framework ainda não ter sido inventado.
+Eu ouvia — e ainda se ouve — que “a faculdade atrasa”. Na minha caminhada, aconteceu o oposto: a faculdade não me preparou para o framework do semestre. Preparou para o framework ainda não ter sido inventado.
 
-Se eu pudesse mandar um recado ao Mateus de 2007, não seria “larga a teoria e vai ganhar dinheiro”. Seria: **presta atenção na teoria. Você vai gastá-la a vida inteira, em empregos que ainda não existem.**
+Se eu pudesse falar com o Mateus de 2007, não seria “larga a teoria e vai ganhar dinheiro”. Seria: **presta atenção na teoria. Você vai gastá-la a vida inteira, em empregos que ainda não existem.** Isso é recado para mim. Se servir para alguém aqui, ótimo. Se não, também.
 
 ---
 
@@ -98,7 +100,7 @@ O que Rails me deu foi um padrão estético e ético para o trabalho. Menos ceri
 
 Essa paixão sobreviveu a trocas de emprego, de país e de stack. Quando eu olho para uma decisão agora — no Miro, com IA no meio, com time espalhado — eu ainda pergunto a mesma coisa que o Rails me ensinou a perguntar: **isso precisa ser tão complicado?**
 
-Se vocês levarem uma única preferência técnica da minha boca, levem essa. Não “aprendam Ruby”. Levem: simplicidade é uma escolha profissional, não um acidente de sintaxe.
+Não “aprendam Ruby”. O que ficou para mim foi isto: simplicidade é uma escolha profissional, não um acidente de sintaxe. É preferência minha. Não é mandamento.
 
 ---
 
@@ -123,9 +125,9 @@ O que eu observei, de dentro:
 - **Pessoas circulam.** Por isso reputação viaja mais rápido do que cargo.
 - **A linguagem do repositório é detalhe.** O problema, o gosto e a confiança são o produto.
 
-E tem um ponto delicado, que eu não quero que vire fábula de “precisa ir embora”. Ir para fora foi uma virada na minha vida. Não é o único caminho bom. O que é transferível, esteja você em [cidade da universidade] ou na Califórnia, é o padrão: clareza, simplicidade, responsabilidade, gentileza firme.
+E tem um ponto delicado, que eu não quero que vire fábula de “precisa ir embora” — nem de “façam como eu”. Ir para fora foi uma virada na *minha* vida. Não é o único caminho bom. Nem o caminho. O que eu vi se repetir, aqui e lá, foi um padrão: clareza, simplicidade, responsabilidade, gentileza firme.
 
-Ser uma pessoa legal, nesse ambiente, não é ser ingênuo. É ser alguém com quem as outras pessoas querem resolver o difícil. Em SF isso não é discurso de convivência. É vantagem composta. Talento tem de sobra. Gente com quem dá para construir, menos.
+Ser uma pessoa legal, nesse ambiente, não é ser ingênuo. Foi o que eu vi funcionar: ser alguém com quem as outras pessoas querem resolver o difícil. Em SF isso não era discurso de convivência. Talento tinha de sobra. Gente com quem dava para construir, menos.
 
 ---
 
@@ -147,23 +149,23 @@ Por isso eu não aceito o discurso de que a base ficou obsoleta. Ficou o contrá
 
 A analogia que eu uso comigo: na NF-e, o XML era o fácil. A lei era o difícil. Com IA, o patch é o fácil. A arquitetura, o limite, o “isso pode ir para produção?” — isso é o difícil.
 
-Vocês não estão atrasados por estarem aqui estudando. Vocês estão no único lugar que ainda insiste, com calma, que entender vem antes de gerar.
+O que eu tiro disso, olhando para esta sala: estar aqui estudando não é atraso. Foi o único lugar, na minha história, que insistiu com calma que entender vem antes de gerar. Hoje isso me parece ainda mais valioso. Não porque eu esteja certo. Porque o ofício puxou para esse lado.
 
 ---
 
-## 9. Fecho — o que fica — 3 min
+## 9. Fecho — o que ficou para mim — 3 min
 
 Eu percorri desktop, Java, um pedaço do Estado brasileiro em forma de XML, um portal que o país usava, Ruby, uma empresa em Santa Monica, duas startups de San Francisco, Cursor, Miro, e agora um ofício em que a IA senta do meu lado.
 
 As stacks vieram e foram. Vão continuar vindo e indo.
 
-O que eu tentaria gravar na porta desta sala:
+Repito o que eu disse no começo: **eu não sou exemplo.** Isso não é um caminho. É o que uma caminhada me ensinou. Cabe em três coisas — minhas, não de vocês:
 
-1. **Aprenda a base como se fosse a única coisa que viaja com você.** Porque é.
-2. **Trate simplicidade como competência.** Não como falta de ambição.
-3. **Seja uma pessoa legal de verdade.** Constrói-se carreira no detalhe de como você discorda, como você ensina, como você credita o outro, como você se comporta quando não sabe. Relação boa sobrevive a framework, a fronteira e a aquisição.
+1. **A base viajou comigo. A stack, não.**
+2. **Simplicidade me salvou mais vezes do que ambição de arquitetura.**
+3. **Ser uma pessoa com quem dá para pensar junto pesou mais do que qualquer ferramenta.** No detalhe de como eu discordo, de como eu creditei o outro, de como eu me comportei quando não sabia. Relação boa sobreviveu a framework, a fronteira e a aquisição.
 
-Eu saí daqui em 2011. O mundo do software que eu encontrei lá fora não existe mais. O próximo também não vai durar. Vocês não precisam prever a ferramenta. Precisam chegar inteiros, com cabeça boa e com gente que queira construir junto.
+Eu saí daqui em 2011. O mundo do software que eu encontrei lá fora não existe mais. O próximo também não vai durar. Eu não sei prever a ferramenta de vocês. Só sei o que me segurou. Se alguma parte disso servir, fico feliz. Se não servir, também está certo: a caminhada de vocês não precisa parecer com a minha.
 
 Obrigado. Eu fico para conversar.
 
@@ -174,28 +176,29 @@ Obrigado. Eu fico para conversar.
 Você não precisa ler isso. São iscas, se o mediador pedir.
 
 - “Qual linguagem eu deveria aprender?”
-  - A da sua disciplina neste semestre, com profundidade. Depois, a do problema que você quiser resolver. A terceira você aprende em semanas se as duas primeiras existirem de verdade.
+  - Eu não tenho a linguagem certa. O que funcionou para mim: a da disciplina daquele semestre, com profundidade. Depois, a do problema que eu queria resolver. A terceira veio mais rápido porque as duas primeiras existiam.
 - “Ainda vale a pena fazer faculdade?”
-  - A minha caminhada inteira é um sim, com uma ressalva: faculdade como base, não como abrigo eterno do mercado.
+  - Na minha caminhada, sim — como base, não como abrigo eterno do mercado. Outras pessoas fizeram diferente. Eu só posso falar da que eu vivi.
 - “Como você foi para fora?”
-  - Conte o que for público e verdadeiro. Depois desvie para o que se transfere: inglês escrito, portfólio de problemas, gente que topa te indicar porque gosta de trabalhar com você.
+  - Conte o que for público e verdadeiro. Sem transformar em tutorial. O que pesou para mim: inglês escrito, problemas de que eu conseguia falar, gente que topou me indicar porque dava gosto trabalhar junto.
 - “IA não vai acabar com o emprego júnior?”
-  - Vai acabar com o júnior que só traduz enunciado em sintaxe. Não vai acabar com quem entende o enunciado. A universidade é o lugar de virar o segundo.
+  - Eu não sei o mapa de vocês. O que eu vejo: fica apertado para quem só traduz enunciado em sintaxe. Continua havendo espaço para quem entende o enunciado. A universidade, na minha história, foi o lugar de virar o segundo.
 - “O que é diferente em SF?”
-  - Densidade e relógio. Não é magia. É muita gente boa no mesmo lugar, decidindo rápido, escrevendo muito, trocando de cadeira.
+  - Densidade e relógio. Não é magia. Não é superior. É muita gente boa no mesmo lugar, decidindo rápido, escrevendo muito, trocando de cadeira.
 - “Como se faz para ser uma pessoa legal sem ser passado para trás?”
-  - Clareza não é grosseria. Gentileza não é dizer sim. O ponto é ser previsível, justo e alguém que eleva o trabalho do outro.
+  - Eu não tenho técnica. O que eu tentei praticar: clareza sem grosseria, gentileza sem dizer sim para tudo. Ser previsível, justo, e alguém que eleva o trabalho do outro.
 
 ---
 
 ## Notas de encenação
 
 - Em pé, sem ler parágrafo. Este texto é rede de segurança, não teleprompter.
+- Diga “não sou exemplo” cedo. Se a sala rir de uma conquista, devolva: “é o que aconteceu comigo, não um modelo.”
 - Quando citar 2006, segure um tempo. Deixe a sala ver a distância.
 - Quando chegar em IA, baixe a velocidade. É o trecho que pode ser mal citado no corredor.
 - Não mostre código. Esta palestra não é talk de framework.
 - Se alguém da platéia for professor da época da maratona, nomeie com afeto se você lembrar. Uma frase basta.
-- No Q&A, responda curto e devolva a pergunta para a experiência da sala (“alguém aqui já usou IA para entregar trabalho sem conseguir explicar?”).
+- No Q&A, responda curto, no primeiro pessoa, e devolva a pergunta para a experiência da sala (“alguém aqui já usou IA para entregar trabalho sem conseguir explicar?”).
 
 ## Cortes se passar do tempo
 
