@@ -1,0 +1,177 @@
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+import { slides } from "@/data/slides";
+import { SlideView } from "@/components/slide-view";
+
+function clampIndex(value: number) {
+  return Math.min(Math.max(value, 0), slides.length - 1);
+}
+
+export function Deck() {
+  const [index, setIndex] = useState(0);
+  const [notesOpen, setNotesOpen] = useState(false);
+  const [helpOpen, setHelpOpen] = useState(false);
+  const [touchX, setTouchX] = useState<number | null>(null);
+
+  const go = useCallback((next: number) => {
+    setIndex((current) => clampIndex(typeof next === "number" ? next : current));
+  }, []);
+
+  const next = useCallback(() => {
+    setIndex((current) => clampIndex(current + 1));
+  }, []);
+
+  const prev = useCallback(() => {
+    setIndex((current) => clampIndex(current - 1));
+  }, []);
+
+  useEffect(() => {
+    const fromHash = Number.parseInt(window.location.hash.replace("#", ""), 10);
+    if (Number.isFinite(fromHash)) {
+      setIndex(clampIndex(fromHash - 1));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.history.replaceState(null, "", `#${index + 1}`);
+  }, [index]);
+
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA")) {
+        return;
+      }
+
+      if (event.key === "?" || (event.key === "/" && event.shiftKey)) {
+        event.preventDefault();
+        setHelpOpen((open) => !open);
+        return;
+      }
+
+      if (event.key === "n" || event.key === "N") {
+        event.preventDefault();
+        setNotesOpen((open) => !open);
+        return;
+      }
+
+      if (event.key === "f" || event.key === "F") {
+        event.preventDefault();
+        if (document.fullscreenElement) {
+          void document.exitFullscreen();
+        } else {
+          void document.documentElement.requestFullscreen();
+        }
+        return;
+      }
+
+      if (event.key === "Escape") {
+        setHelpOpen(false);
+        setNotesOpen(false);
+        return;
+      }
+
+      if (["ArrowRight", "PageDown", " ", "j"].includes(event.key)) {
+        event.preventDefault();
+        next();
+      }
+      if (["ArrowLeft", "PageUp", "Backspace", "k"].includes(event.key)) {
+        event.preventDefault();
+        prev();
+      }
+      if (event.key === "Home") {
+        event.preventDefault();
+        go(0);
+      }
+      if (event.key === "End") {
+        event.preventDefault();
+        go(slides.length - 1);
+      }
+    };
+
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [go, next, prev]);
+
+  const slide = slides[index];
+  const theme = slide.variant === "emphasis" ? "light" : "dark";
+
+  return (
+    <main
+      className={`deck relative flex min-h-dvh flex-col overflow-hidden ${theme}`}
+      onClick={(event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        if (x < rect.width * 0.28) prev();
+        else next();
+      }}
+      onTouchStart={(event) => setTouchX(event.changedTouches[0]?.clientX ?? null)}
+      onTouchEnd={(event) => {
+        const end = event.changedTouches[0]?.clientX;
+        if (touchX == null || end == null) return;
+        const delta = end - touchX;
+        if (Math.abs(delta) > 48) {
+          if (delta < 0) next();
+          else prev();
+        }
+        setTouchX(null);
+      }}
+    >
+      <div className="grain" aria-hidden />
+
+      <div className="relative z-10 flex min-h-dvh flex-col px-[8vw] pb-16 pt-[9vh]">
+        <SlideView key={slide.lines.join("|")} slide={slide} />
+      </div>
+
+      <footer className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-between px-[8vw] pb-6">
+        <p className="font-sans text-[0.68rem] tracking-[0.28em] uppercase text-[var(--muted)]">
+          Mateus
+        </p>
+        <p className="font-sans text-[0.68rem] tracking-[0.22em] text-[var(--muted)]">
+          {String(index + 1).padStart(2, "0")}
+          <span className="mx-2 opacity-40">/</span>
+          {String(slides.length).padStart(2, "0")}
+        </p>
+      </footer>
+
+      <div className="absolute inset-x-0 bottom-0 z-20 h-px bg-[var(--line)]">
+        <div
+          className="h-px bg-[var(--copper)] transition-[width] duration-500 ease-out"
+          style={{ width: `${((index + 1) / slides.length) * 100}%` }}
+        />
+      </div>
+
+      {notesOpen ? (
+        <aside
+          className="notes-panel absolute inset-x-0 bottom-0 z-30 border-t border-[var(--line)] px-[8vw] py-6"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <p className="mb-2 font-sans text-[0.68rem] tracking-[0.22em] uppercase text-[var(--copper)]">
+            Nota
+          </p>
+          <p className="max-w-3xl text-[0.98rem] leading-relaxed text-[var(--cream)]">
+            {slide.notes}
+          </p>
+        </aside>
+      ) : null}
+
+      {helpOpen ? (
+        <aside
+          className="notes-panel absolute inset-x-0 bottom-0 z-30 border-t border-[var(--line)] px-[8vw] py-6"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <p className="mb-3 font-sans text-[0.68rem] tracking-[0.22em] uppercase text-[var(--copper)]">
+            Atalhos
+          </p>
+          <ul className="grid max-w-xl gap-2 text-[0.95rem] text-[var(--cream)] sm:grid-cols-2">
+            <li>← → espaço — avançar</li>
+            <li>N — notas de fala</li>
+            <li>F — tela cheia</li>
+            <li>? — esta ajuda</li>
+          </ul>
+        </aside>
+      ) : null}
+    </main>
+  );
+}
