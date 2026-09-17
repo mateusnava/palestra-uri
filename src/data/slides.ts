@@ -161,20 +161,6 @@ export const slides: Slide[] = [
       "Quebra-gelo de 2008. Primeiro ouro da natação brasileira, 50m livre. Um segundo de orgulho. Aí a NF-e. Não vire transmissão esportiva.",
   },
   {
-    variant: "list",
-    year: "2008",
-    lines: ["O que aquele", "projeto ensinou"],
-    items: [
-      "Ler.",
-      "Conversar.",
-      "Entender a lei no detalhe.",
-      "Amigos para a vida.",
-    ],
-    footer: "O difícil não era o código.",
-    notes:
-      "Quem não entende o domínio vira digitador — em 2008 e agora. Amigos para a vida é o saldo. Sem discursinho.",
-  },
-  {
     variant: "statement",
     year: "2008",
     lines: ["Cheguei como estagiário."],
@@ -191,6 +177,20 @@ export const slides: Slide[] = [
     footer: "Só codar não adianta. Precisa entender produto — e gente.",
     notes:
       "O projeto foi bacana. A stack é detalhe. O que ficou: produto, conversa, e que código sozinho não resolve.",
+  },
+  {
+    variant: "list",
+    year: "2008",
+    lines: ["O que aquele", "projeto ensinou"],
+    items: [
+      "Ler.",
+      "Conversar.",
+      "Entender a lei no detalhe.",
+      "Amigos para a vida.",
+    ],
+    footer: "O difícil não era o código.",
+    notes:
+      "Quem não entende o domínio vira digitador — em 2008 e agora. Amigos para a vida é o saldo. Sem discursinho.",
   },
   {
     variant: "milestone",
@@ -222,10 +222,10 @@ export const slides: Slide[] = [
   },
   {
     variant: "emphasis",
-    lines: ["Trabalhar é uma parte", "da vida."],
-    sub: "Hora extra e noite em claro não são carreira. Sou grato pelo que aprendi — e não quero que o trabalho seja o todo.",
+    lines: ["A vida é muito mais", "que o trabalho."],
+    sub: "Trabalhei demais. Hora extra, noites em claro. Não vale a pena. Nenhuma camiseta de empresa. Cuidar da cabeça. Estar presente.",
     notes:
-      "Primeira pessoa. Sem sermão. Vestir a camisa parecia virtude. Era desgaste. Agradeça e feche.",
+      "A Vivo cobrou o corpo. Primeira pessoa, sem sermão e sem gratidão obrigatória. Fecha e segue.",
   },
   {
     variant: "milestone",
