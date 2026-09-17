@@ -159,7 +159,7 @@ export function SlideView({ slide }: SlideViewProps) {
 
   if (slide.variant === "list") {
     return (
-      <div className="flex min-h-0 flex-1 flex-col justify-between gap-12 lg:flex-row lg:items-end">
+      <div className="flex min-h-0 flex-1 flex-col justify-center gap-12 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-xl">
           {slide.year ? <p className="kicker mb-8">{slide.year}</p> : null}
           {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
