@@ -9,8 +9,10 @@ function clampIndex(value: number) {
   return Math.min(Math.max(value, 0), slides.length - 1);
 }
 
-export function Deck() {
-  const [index, setIndex] = useState(0);
+export function Deck({ startIndex }: { startIndex?: number }) {
+  const [index, setIndex] = useState(() =>
+    startIndex != null ? clampIndex(startIndex) : 0,
+  );
   const [notesOpen, setNotesOpen] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
   const [touchX, setTouchX] = useState<number | null>(null);
@@ -28,14 +30,15 @@ export function Deck() {
   }, []);
 
   useEffect(() => {
+    if (startIndex != null) return;
     const fromHash = Number.parseInt(window.location.hash.replace("#", ""), 10);
     if (Number.isFinite(fromHash)) {
       setIndex(clampIndex(fromHash - 1));
     }
-  }, []);
+  }, [startIndex]);
 
   useEffect(() => {
-    window.history.replaceState(null, "", `#${index + 1}`);
+    window.history.replaceState(null, "", `/#${index + 1}`);
   }, [index]);
 
   useEffect(() => {
@@ -150,6 +153,14 @@ export function Deck() {
           />
         </div>
       ) : null}
+
+      <a
+        href="/slides"
+        onClick={(event) => event.stopPropagation()}
+        className="absolute right-[8vw] top-7 z-30 font-sans text-[0.68rem] tracking-[0.28em] uppercase text-[var(--muted)] transition hover:text-[var(--copper)]"
+      >
+        Índice
+      </a>
 
       <div className="relative z-10 flex min-h-dvh flex-col px-[8vw] pb-16 pt-[9vh]">
         <SlideView key={slide.lines.join("|")} slide={slide} />
