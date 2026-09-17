@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #0c0b09;
-  --cream: #f3efe6;
-  --muted: #8a8478;
-  --copper: #c56a3a;
-  --line: #2c2924;
-  --panel: rgba(12, 11, 9, 0.92);
+  --ink: #0c1218;
+  --cream: #f3ece0;
+  --muted: #8f8778;
+  --copper: #d4783c;
+  --sand: #e4d2b0;
+  --sky: #2a6fa3;
+  --line: #2a2e33;
+  --panel: rgba(12, 18, 24, 0.92);
 }
 
 @theme inline {
@@ -40,6 +42,39 @@ body {
     color 420ms ease;
 }
 
+.deck.title {
+  background:
+    radial-gradient(ellipse 80% 55% at 88% -8%, rgba(42, 111, 163, 0.3), transparent 58%),
+    radial-gradient(ellipse 48% 38% at 0% 112%, rgba(212, 120, 60, 0.14), transparent 52%),
+    var(--ink);
+}
+
+.deck.photo {
+  background: #05070a;
+  color: var(--cream);
+}
+
+.deck.photo .grain {
+  opacity: 0;
+}
+
+.deck.photo footer p {
+  color: rgba(243, 236, 224, 0.7);
+}
+
+.deck.milestone {
+  --muted: #e8c4a0;
+  --line: rgba(243, 236, 224, 0.2);
+  background:
+    radial-gradient(ellipse 70% 55% at 100% 0%, rgba(232, 180, 96, 0.22), transparent 58%),
+    #6e2c12;
+  color: var(--cream);
+}
+
+.deck.milestone footer p {
+  color: rgba(243, 236, 224, 0.62);
+}
+
 .deck.light {
   --muted: #6d675c;
   --line: #d8d1c4;
@@ -61,8 +96,8 @@ body {
 .display {
   font-family: var(--font-display), ui-serif, Georgia, serif;
   font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 1.04;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
 }
 
 .kicker {
@@ -111,6 +146,252 @@ body {
 .deck .mt-10,
 .deck .mt-16 {
   animation: rise 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.deck.desktop {
+  --muted: rgba(255, 255, 255, 0.78);
+  --line: rgba(255, 255, 255, 0.2);
+  background:
+    radial-gradient(ellipse 90% 42% at 50% 108%, #6aa12e 0%, #4d7c22 28%, transparent 29%),
+    linear-gradient(#7ec8ea 0%, #3b8fd0 48%, #1f5f9a 100%);
+}
+
+.deck.desktop .grain {
+  opacity: 0.02;
+}
+
+.deck.desktop footer p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.deck.ai {
+  --muted: rgba(214, 224, 255, 0.72);
+  --line: rgba(150, 180, 255, 0.28);
+  --copper: #9db6ff;
+  background: #02030a;
+  color: #f4f7ff;
+}
+
+.deck.ai footer p {
+  color: rgba(196, 210, 255, 0.5);
+}
+
+.deck.ai .grain {
+  opacity: 0.03;
+}
+
+.ai-field {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.ai-bloom {
+  position: absolute;
+  inset: 18% -8% 22%;
+  background:
+    radial-gradient(ellipse 58% 42% at 50% 72%, rgba(120, 168, 255, 0.38), transparent 62%),
+    radial-gradient(ellipse 28% 22% at 62% 64%, rgba(212, 120, 60, 0.16), transparent 70%);
+  filter: blur(10px);
+}
+
+.ai-slit {
+  display: block;
+  width: min(38rem, 72vw);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(180, 205, 255, 0.35) 18%,
+    #fff 50%,
+    rgba(228, 180, 130, 0.55) 82%,
+    transparent
+  );
+  box-shadow:
+    0 0 18px 2px rgba(170, 200, 255, 0.55),
+    0 0 80px 16px rgba(90, 130, 255, 0.22);
+}
+
+.deck.ai .ai-title {
+  color: #f7f9ff;
+  text-shadow: 0 0 48px rgba(150, 185, 255, 0.28);
+}
+
+.deck.finale {
+  --muted: #8f8778;
+  background:
+    radial-gradient(ellipse 70% 50% at 8% 108%, rgba(212, 120, 60, 0.16), transparent 55%),
+    radial-gradient(ellipse 55% 42% at 96% -6%, rgba(42, 111, 163, 0.18), transparent 58%),
+    var(--ink);
+}
+
+.finale-pillar {
+  min-width: 0;
+}
+
+.finale-index {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+.finale-copy {
+  max-width: 22ch;
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.28;
+  color: var(--sand);
+}
+
+.xp-window {
+  width: min(920px, 92%);
+  overflow: hidden;
+  border: 3px solid #0a5ad6;
+  border-radius: 8px 8px 3px 3px;
+  background: #ece9d8;
+  box-shadow:
+    0 22px 50px rgba(0, 20, 40, 0.35),
+    inset 0 0 0 1px #9db9eb;
+  color: #111;
+  font-family: Tahoma, "MS Sans Serif", Verdana, sans-serif;
+  font-size: 13px;
+}
+
+.xp-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 6px 0 8px;
+  background: linear-gradient(#1b57d2, #3a81f0 45%, #1a4ec8);
+  color: white;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 rgba(0, 0, 40, 0.35);
+}
+
+.xp-icon {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #fff;
+  background: linear-gradient(135deg, #f4c542, #c57a12);
+}
+
+.xp-title-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.xp-caption {
+  display: flex;
+  gap: 3px;
+}
+
+.xp-caption i {
+  display: grid;
+  width: 21px;
+  height: 18px;
+  place-items: center;
+  border: 1px solid #003c9a;
+  background: linear-gradient(#3d8af0, #1b4fc4);
+  font-style: normal;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.xp-caption i:last-child {
+  background: linear-gradient(#e2654a, #c12a1a);
+}
+
+.xp-menu {
+  display: flex;
+  gap: 14px;
+  padding: 4px 10px;
+  border-bottom: 1px solid #b8b4a8;
+  background: #ece9d8;
+}
+
+.xp-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+}
+
+.xp-fields {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.2fr 1fr;
+  gap: 10px;
+}
+
+.xp-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.xp-fields input {
+  height: 24px;
+  border: 1px solid #7a7870;
+  background: white;
+  padding: 0 6px;
+  box-shadow: inset 1px 1px 0 #d0cdc4;
+  font: inherit;
+}
+
+.xp-grid {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border: 1px solid #7a7870;
+}
+
+.xp-grid th,
+.xp-grid td {
+  padding: 6px 8px;
+  border-right: 1px solid #d8d4c8;
+  text-align: left;
+}
+
+.xp-grid th {
+  background: #0a246a;
+  color: white;
+  font-weight: 700;
+}
+
+.xp-grid tr.is-selected td {
+  background: #0a246a;
+  color: white;
+}
+
+.xp-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.xp-buttons button {
+  min-width: 88px;
+  height: 26px;
+  border: 1px solid #808080;
+  background: #ece9d8;
+  box-shadow:
+    inset 1px 1px 0 #fff,
+    inset -1px -1px 0 #808080;
+  font: inherit;
+}
+
+.xp-status {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 8px;
+  padding: 3px 8px;
+  border-top: 1px solid #b8b4a8;
+  background: #ece9d8;
+  color: #333;
 }
 
 @media (prefers-reduced-motion: reduce) {

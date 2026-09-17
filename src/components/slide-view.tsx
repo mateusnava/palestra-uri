@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { DelphiWindow } from "@/components/delphi-window";
 import type { Slide } from "@/data/slides";
 
 type SlideViewProps = {
@@ -14,17 +16,126 @@ export function SlideView({ slide }: SlideViewProps) {
 
   if (slide.variant === "title") {
     return (
-      <div className="flex min-h-0 flex-1 flex-col justify-between">
-        {slide.kicker ? <p className="kicker">{slide.kicker}</p> : <span />}
-        <div className="max-w-5xl">
-          <h1 className="display text-[clamp(2.6rem,7.2vw,6.4rem)]">{heading}</h1>
+      <div className="flex min-h-0 flex-1 flex-col justify-end pb-[4vh]">
+        {slide.kicker ? (
+          <p className="kicker mb-8 after:mt-5 after:block after:h-px after:w-16 after:bg-[var(--copper)] after:content-['']">
+            {slide.kicker}
+          </p>
+        ) : null}
+        <h1 className="display max-w-5xl text-[clamp(3rem,7.4vw,6.8rem)] text-[var(--sand)]">
+          {heading}
+        </h1>
+        {slide.sub ? (
+          <p className="mt-10 text-[clamp(1.05rem,2vw,1.35rem)] tracking-wide text-[var(--muted)]">
+            {slide.sub}
+          </p>
+        ) : null}
+        {slide.footer ? (
+          <p className="mt-10 font-sans text-[0.78rem] tracking-[0.18em] text-[var(--muted)]">
+            {slide.footer}
+          </p>
+        ) : null}
+      </div>
+    );
+  }
+
+  if (slide.variant === "intro") {
+    return (
+      <div className="flex min-h-0 flex-1 flex-col justify-center gap-10 lg:flex-row lg:items-center lg:justify-between">
+        <div className="min-w-0">
+          <h1 className="display text-[clamp(2.8rem,6vw,5.2rem)]">{heading}</h1>
+          {slide.items ? (
+            <ul className="mt-7 max-w-xl list-disc space-y-2.5 pl-6 marker:text-[var(--copper)]">
+              {slide.items.map((item) => (
+                <li
+                  key={item}
+                  className="pl-1 text-[clamp(1.05rem,1.8vw,1.3rem)] leading-snug text-[var(--cream)]"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+        {slide.figure ? (
+          <div className="relative aspect-[4/3] w-[min(48vw,30rem)] shrink-0 overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10">
+            <Image
+              src={slide.figure}
+              alt={slide.figureAlt ?? ""}
+              fill
+              priority
+              unoptimized
+              sizes="30rem"
+              className="object-cover object-[center_70%]"
+            />
+          </div>
+        ) : null}
+      </div>
+    );
+  }
+
+  if (slide.variant === "milestone") {
+    return (
+      <div className="flex min-h-0 flex-1 flex-col justify-end gap-10 pb-[5vh] lg:flex-row lg:items-end lg:justify-between">
+        <div className="min-w-0">
+          <p className="display text-[clamp(5.4rem,15vw,11.5rem)] leading-[0.86] tracking-[-0.04em] text-[var(--sand)]">
+            {slide.year}
+          </p>
+          <div className="mt-10 h-px w-16 bg-[var(--sand)]/40" />
+          <h1 className="display mt-8 max-w-xl text-[clamp(1.7rem,3.8vw,3rem)] text-[var(--cream)]">
+            {heading}
+          </h1>
           {slide.sub ? (
-            <p className="mt-10 text-[clamp(1.05rem,2vw,1.35rem)] tracking-wide text-[var(--muted)]">
+            <p className="mt-6 max-w-xl text-[clamp(1.1rem,2vw,1.45rem)] leading-snug text-[var(--sand)]/80">
               {slide.sub}
             </p>
           ) : null}
         </div>
-        <span />
+        {slide.figure ? (
+          <div
+            className={`relative shrink-0 ${
+              slide.figureWide
+                ? "aspect-[16/9] w-[min(50vw,34rem)] overflow-hidden rounded-sm ring-1 ring-black/20 shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
+                : "aspect-square w-[min(46vw,28rem)]"
+            }`}
+          >
+            <Image
+              src={slide.figure}
+              alt={slide.figureAlt ?? ""}
+              fill
+              priority
+              unoptimized
+              sizes="34rem"
+              className={
+                slide.figureShape === "plain"
+                  ? "object-contain"
+                  : "rounded-full object-cover"
+              }
+            />
+          </div>
+        ) : null}
+      </div>
+    );
+  }
+
+  if (slide.variant === "ai") {
+    return (
+      <div className="relative flex min-h-0 flex-1 flex-col items-center justify-center text-center">
+        <div className="ai-field" aria-hidden>
+          <span className="ai-bloom" />
+        </div>
+        {slide.year ? (
+          <p className="kicker relative z-10 mb-8">{slide.year}</p>
+        ) : null}
+        <h1 className="ai-title display relative z-10 max-w-[18ch] text-[clamp(3.4rem,9.2vw,8rem)]">
+          {heading}
+        </h1>
+        <span className="ai-slit relative z-10 mt-10" aria-hidden />
+        {slide.sub ? (
+          <p className="relative z-10 mt-10 max-w-xl text-[clamp(1.15rem,2.2vw,1.7rem)] leading-snug text-[var(--muted)]">
+            {slide.sub}
+          </p>
+        ) : null}
       </div>
     );
   }
@@ -83,7 +194,9 @@ export function SlideView({ slide }: SlideViewProps) {
       <div className="flex min-h-0 flex-1 flex-col justify-between gap-10 lg:flex-row">
         <div className="max-w-sm">
           {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
-          <h1 className="display text-[clamp(2.4rem,5vw,4.4rem)]">{heading}</h1>
+          {slide.lines.length > 0 ? (
+            <h1 className="display text-[clamp(2.4rem,5vw,4.4rem)]">{heading}</h1>
+          ) : null}
         </div>
         <ol className="flex max-w-xl flex-1 flex-col justify-center">
           {slide.timeline?.map((row) => (
@@ -100,6 +213,39 @@ export function SlideView({ slide }: SlideViewProps) {
             </li>
           ))}
         </ol>
+      </div>
+    );
+  }
+
+  if (slide.variant === "desktop") {
+    return (
+      <div className="flex min-h-0 flex-1 flex-col justify-center">
+        <DelphiWindow />
+      </div>
+    );
+  }
+
+  if (slide.variant === "finale") {
+    const pillars = slide.items ?? [];
+
+    return (
+      <div className="flex min-h-0 flex-1 flex-col justify-center">
+        <h1 className="display max-w-4xl text-[clamp(3rem,8vw,7rem)] text-[var(--sand)]">
+          {heading}
+        </h1>
+        {slide.sub ? (
+          <p className="mt-8 max-w-2xl text-[clamp(1.1rem,2.1vw,1.5rem)] leading-snug text-[var(--muted)]">
+            {slide.sub}
+          </p>
+        ) : null}
+        <div className="mt-16 grid gap-12 border-t border-[var(--line)] pt-12 md:grid-cols-2 md:gap-20">
+          {pillars.map((item, index) => (
+            <article key={item} className="finale-pillar">
+              <p className="finale-index">{String(index + 1).padStart(2, "0")}</p>
+              <p className="finale-copy mt-5">{item}</p>
+            </article>
+          ))}
+        </div>
       </div>
     );
   }
@@ -123,16 +269,65 @@ export function SlideView({ slide }: SlideViewProps) {
   }
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col justify-center">
-      {slide.year ? <p className="kicker mb-8">{slide.year}</p> : null}
-      {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
-      <h1 className="display max-w-5xl text-[clamp(2.3rem,5.8vw,5.1rem)]">
-        {heading}
-      </h1>
-      {slide.sub ? (
-        <p className="mt-10 max-w-2xl text-[clamp(1.1rem,2.1vw,1.5rem)] leading-snug text-[var(--muted)]">
-          {slide.sub}
-        </p>
+    <div className="flex min-h-0 flex-1 flex-col justify-center gap-10 lg:flex-row lg:items-center lg:justify-between">
+      <div className="min-w-0">
+        {slide.year ? <p className="kicker mb-8">{slide.year}</p> : null}
+        {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
+        <h1 className="display max-w-xl text-[clamp(2.3rem,5.8vw,5.1rem)]">
+          {heading}
+        </h1>
+        {slide.sub ? (
+          <p className="mt-10 max-w-xl text-[clamp(1.1rem,2.1vw,1.5rem)] leading-snug text-[var(--muted)]">
+            {slide.sub}
+          </p>
+        ) : null}
+        {slide.footer ? (
+          <p className="mt-8 text-[1.05rem] text-[var(--muted)]">{slide.footer}</p>
+        ) : null}
+      </div>
+      {slide.gallery ? (
+        <div
+          className={`grid shrink-0 gap-2.5 ${
+            slide.gallery.length <= 4
+              ? "w-[min(48vw,28rem)] grid-cols-2"
+              : slide.gallery.length >= 7
+                ? "w-[min(56vw,34rem)] grid-cols-4"
+                : "w-[min(52vw,26rem)] grid-cols-3"
+          }`}
+        >
+          {slide.gallery.map((src) => (
+            <div
+              key={src}
+              className="relative aspect-[3/4] overflow-hidden rounded-sm shadow-[0_10px_24px_rgba(0,0,0,0.4)] ring-1 ring-white/10"
+            >
+              <Image
+                src={src}
+                alt=""
+                fill
+                unoptimized
+                sizes="9rem"
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      ) : slide.figure ? (
+        <div
+          className={`relative shrink-0 overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10 ${
+            slide.figureWide
+              ? "w-[min(52vw,38rem)]"
+              : "w-[min(42vw,22rem)]"
+          }`}
+        >
+          <Image
+            src={slide.figure}
+            alt={slide.figureAlt ?? ""}
+            width={720}
+            height={960}
+            unoptimized
+            className="h-auto w-full object-contain"
+          />
+        </div>
       ) : null}
     </div>
   );

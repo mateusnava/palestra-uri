@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 import { slides } from "@/data/slides";
 import { SlideView } from "@/components/slide-view";
 
@@ -95,7 +96,21 @@ export function Deck() {
   }, [go, next, prev]);
 
   const slide = slides[index];
-  const theme = slide.variant === "emphasis" ? "light" : "dark";
+  const theme = slide.image
+    ? "photo"
+    : slide.variant === "ai"
+      ? "ai"
+      : slide.variant === "finale"
+        ? "finale"
+        : slide.variant === "emphasis"
+        ? "light"
+        : slide.variant === "title"
+          ? "dark title"
+          : slide.variant === "milestone"
+            ? "milestone"
+            : slide.variant === "desktop"
+              ? "desktop"
+              : "dark";
 
   return (
     <main
@@ -120,13 +135,29 @@ export function Deck() {
     >
       <div className="grain" aria-hidden />
 
+      {slide.image ? (
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={slide.image}
+            alt={slide.imageAlt ?? ""}
+            fill
+            priority
+            unoptimized
+            className={`object-cover ${slide.imageFocus ?? "object-center"}`}
+          />
+          <div
+            className={`absolute inset-0 ${slide.imageOverlay ?? "bg-black/45"}`}
+          />
+        </div>
+      ) : null}
+
       <div className="relative z-10 flex min-h-dvh flex-col px-[8vw] pb-16 pt-[9vh]">
         <SlideView key={slide.lines.join("|")} slide={slide} />
       </div>
 
       <footer className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-between px-[8vw] pb-6">
         <p className="font-sans text-[0.68rem] tracking-[0.28em] uppercase text-[var(--muted)]">
-          Mateus
+          {slide.variant === "intro" && !slide.year ? "URI" : "Mateus"}
         </p>
         <p className="font-sans text-[0.68rem] tracking-[0.22em] text-[var(--muted)]">
           {String(index + 1).padStart(2, "0")}

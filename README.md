@@ -1,4 +1,4 @@
-# O que mudou — e o que não mudou
+# 20 anos de desenvolvimento de software: mudanças e a IA
 
 Deck da palestra de **Mateus** na universidade onde se formou. Visual editorial, uma ideia por slide. O tom é de relato: compartilhar o que a caminhada ensinou, sem se colocar como exemplo.
 
