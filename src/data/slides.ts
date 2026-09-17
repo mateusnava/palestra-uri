@@ -33,6 +33,7 @@ export type Slide = {
   figureWide?: boolean;
   gallery?: string[];
   timeline?: TimelineRow[];
+  diagram?: "ai-flow";
   variant: SlideVariant;
   notes: string;
 };
@@ -622,7 +623,41 @@ export const slides: Slide[] = [
     year: "hoje",
     lines: ["A IA mudou como", "a gente pensa e", "constrói software."],
     notes:
-      "Anuncie o cuidado: palestra para acadêmicos. A frase da internet é preguiçosa.",
+      "A porta. Daqui, três slides: o que é, o fluxo, as ferramentas. Sem AGI. Sem aula de 40 minutos.",
+  },
+  {
+    variant: "list",
+    year: "hoje",
+    lines: ["O que é IA?"],
+    items: [
+      "LLM — a rede. Bilhões de pesos. Não é um banco de fatos.",
+      "Token — um pedaço de texto. Às vezes uma palavra, às vezes menos.",
+      "Objetivo — prever o próximo token.",
+    ],
+    notes:
+      "Três nomes. A sala precisa deles antes do fluxo. Não é busca. Não é um colega. Completar a sequência.",
+  },
+  {
+    variant: "statement",
+    year: "hoje",
+    lines: ["Como funciona?"],
+    diagram: "ai-flow",
+    notes:
+      "Ande o fluxo com o dedo. Tokenize, janela, logits, sample. O loop é o ponto: um token de cada vez. Alucinação é o mesmo mecanismo. Sem desenhar a rede.",
+  },
+  {
+    variant: "list",
+    year: "hoje",
+    lines: ["O que eu uso", "agora"],
+    items: [
+      "Cursor — editor, índice do repo, o modelo no loop.",
+      "Claude Code — agente no terminal.",
+      "Codex — o agente da OpenAI.",
+      "Copilot — completion no editor.",
+    ],
+    footer: "A casca muda. Embaixo é o mesmo modelo.",
+    notes:
+      "Arquitetura, não review. IDE+index, CLI agente, autocomplete. Sem demo. Sem ranking.",
   },
   {
     variant: "emphasis",

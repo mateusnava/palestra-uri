@@ -246,6 +246,63 @@ body {
   color: var(--sand);
 }
 
+.ai-flow {
+  margin: 3.5rem 0 0;
+}
+
+.ai-flow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.4rem 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.ai-flow-step {
+  display: flex;
+  align-items: flex-end;
+}
+
+.ai-flow-node {
+  display: flex;
+  max-width: 12.5rem;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.ai-flow-n {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+.ai-flow-label {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.2;
+  color: var(--sand);
+}
+
+.ai-flow-arrow {
+  display: block;
+  width: clamp(1.8rem, 3.6vw, 3.2rem);
+  height: 1px;
+  margin: 0 0.85rem 0.55rem;
+  background: linear-gradient(90deg, transparent, var(--copper));
+}
+
+.ai-flow-loop {
+  margin: 1.75rem 0 0;
+  max-width: 36rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.4;
+  color: var(--muted);
+}
+
 .xp-window {
   width: min(920px, 92%);
   overflow: hidden;

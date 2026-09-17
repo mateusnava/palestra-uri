@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AiFlow } from "@/components/ai-flow";
 import { DelphiWindow } from "@/components/delphi-window";
 import type { Slide } from "@/data/slides";
 
@@ -312,6 +313,7 @@ export function SlideView({ slide }: SlideViewProps) {
         {slide.footer ? (
           <p className="mt-8 text-[1.05rem] text-[var(--muted)]">{slide.footer}</p>
         ) : null}
+        {slide.diagram === "ai-flow" ? <AiFlow /> : null}
       </div>
       {slide.gallery ? (
         <div
