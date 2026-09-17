@@ -252,17 +252,27 @@ export function SlideView({ slide }: SlideViewProps) {
 
   if (slide.variant === "close") {
     return (
-      <div className="flex min-h-0 flex-1 flex-col justify-center">
-        <h1 className="display text-[clamp(3.4rem,10vw,8rem)]">{heading}</h1>
-        {slide.sub ? (
-          <p className="mt-8 text-[clamp(1.2rem,2.4vw,1.7rem)] text-[var(--muted)]">
-            {slide.sub}
-          </p>
-        ) : null}
-        {slide.footer ? (
-          <p className="mt-16 font-sans text-[0.78rem] tracking-[0.28em] uppercase text-[var(--copper)]">
-            {slide.footer}
-          </p>
+      <div className="flex min-h-0 flex-1 flex-col justify-center gap-10 lg:flex-row lg:items-center lg:justify-between">
+        <div className="min-w-0">
+          <h1 className="display text-[clamp(3.4rem,10vw,8rem)]">{heading}</h1>
+          {slide.sub ? (
+            <p className="mt-8 text-[clamp(1.2rem,2.4vw,1.7rem)] text-[var(--muted)]">
+              {slide.sub}
+            </p>
+          ) : null}
+        </div>
+        {slide.figure ? (
+          <div className="relative aspect-[4/3] w-[min(48vw,30rem)] shrink-0 overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10">
+            <Image
+              src={slide.figure}
+              alt={slide.figureAlt ?? ""}
+              fill
+              priority
+              unoptimized
+              sizes="30rem"
+              className="object-cover object-[center_70%]"
+            />
+          </div>
         ) : null}
       </div>
     );

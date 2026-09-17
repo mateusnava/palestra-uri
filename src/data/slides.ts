@@ -652,7 +652,10 @@ export const slides: Slide[] = [
   {
     variant: "close",
     lines: ["Obrigado."],
-    sub: "Fico para conversar.",
-    notes: "Agradeça a quem convidou. Convide pergunta. Desça do palco cedo.",
+    sub: "Perguntas?",
+    figure: "/familia.jpg",
+    figureAlt: "Mateus com a família na praia",
+    notes:
+      "Agradeça. Abra pergunta. A foto é o mesmo calor do começo: a vida que ficou. Desça do palco cedo.",
   },
 ];
