@@ -63,6 +63,46 @@ export const slides: Slide[] = [
       "Quem você é. URI, 2006, produto, Floripa, duas startups. A foto é calor humano, não currículo.",
   },
   {
+    variant: "list",
+    kicker: "Hoje",
+    lines: ["Meus objetivos"],
+    items: [
+      "Entender que a IA mudou radicalmente como se constrói software.",
+      "Ser uma pessoa legal.",
+    ],
+    notes:
+      "Dois só. O primeiro é o ofício. O segundo é o caráter. Pessoa legal é o ponto. Não explique. Segue a agenda.",
+  },
+  {
+    variant: "list",
+    kicker: "Hoje",
+    lines: ["Agenda"],
+    items: [
+      "Uma história. 2006 até agora.",
+      "A virada da IA no trabalho.",
+      "O que é, de verdade.",
+      "O que não muda.",
+    ],
+    notes:
+      "Quatro batidas. Sem horário. Aí o gelo. Depois Plutão.",
+  },
+  {
+    variant: "statement",
+    lines: ["Essa palestra não vai", "falar de assunto", "polêmico."],
+    notes:
+      "Cara séria. Um segundo. Não sorria. Vira o slide.",
+  },
+  {
+    variant: "emphasis",
+    kicker: "Primeiro assunto…",
+    lines: ["Eleições 2026."],
+    figure: "/urna-confirma.svg",
+    figureAlt: "Botão Confirma da urna",
+    figureWide: true,
+    notes:
+      "O soco. Primeiro assunto, Confirma. Deixa a sala rir. Não comente. Não opine. Próximo: Plutão.",
+  },
+  {
     variant: "milestone",
     year: "2006",
     lines: ["Plutão deixou", "de ser planeta."],

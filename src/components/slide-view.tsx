@@ -143,16 +143,36 @@ export function SlideView({ slide }: SlideViewProps) {
 
   if (slide.variant === "emphasis") {
     return (
-      <div className="flex min-h-0 flex-1 flex-col justify-center">
-        {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
-        {slide.year ? <p className="kicker mb-8">{slide.year}</p> : null}
-        <h1 className="display max-w-5xl text-[clamp(2.5rem,6.4vw,5.6rem)]">
-          {heading}
-        </h1>
-        {slide.sub ? (
-          <p className="mt-10 max-w-2xl text-[clamp(1.15rem,2.2vw,1.65rem)] leading-snug text-[var(--muted)]">
-            {slide.sub}
-          </p>
+      <div className="flex min-h-0 flex-1 flex-col justify-center gap-10 lg:flex-row lg:items-center lg:justify-between">
+        <div className="min-w-0">
+          {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
+          {slide.year ? <p className="kicker mb-8">{slide.year}</p> : null}
+          <h1 className="display max-w-4xl text-[clamp(2.8rem,7vw,6.2rem)]">
+            {heading}
+          </h1>
+          {slide.sub ? (
+            <p className="mt-10 max-w-2xl text-[clamp(1.15rem,2.2vw,1.65rem)] leading-snug text-[var(--muted)]">
+              {slide.sub}
+            </p>
+          ) : null}
+        </div>
+        {slide.figure ? (
+          <div
+            className={`relative shrink-0 ${
+              slide.figureWide
+                ? "w-[min(42vw,26rem)]"
+                : "aspect-square w-[min(38vw,20rem)]"
+            }`}
+          >
+            <Image
+              src={slide.figure}
+              alt={slide.figureAlt ?? ""}
+              width={720}
+              height={400}
+              unoptimized
+              className="h-auto w-full object-contain"
+            />
+          </div>
         ) : null}
       </div>
     );
