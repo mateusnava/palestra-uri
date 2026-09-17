@@ -278,16 +278,34 @@ export function SlideView({ slide }: SlideViewProps) {
     );
   }
 
+  const hasMedia = Boolean(slide.gallery || slide.figure);
+
   return (
-    <div className="flex min-h-0 flex-1 flex-col justify-center gap-10 lg:flex-row lg:items-center lg:justify-between">
+    <div
+      className={`flex min-h-0 flex-1 flex-col justify-center ${
+        hasMedia ? "gap-10 lg:flex-row lg:items-center lg:justify-between" : ""
+      }`}
+    >
       <div className="min-w-0">
         {slide.year ? <p className="kicker mb-8">{slide.year}</p> : null}
         {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
-        <h1 className="display max-w-xl text-[clamp(2.3rem,5.8vw,5.1rem)]">
+        <h1
+          className={`display ${
+            hasMedia
+              ? "max-w-xl text-[clamp(2.3rem,5.8vw,5.1rem)]"
+              : "max-w-5xl text-[clamp(2.8rem,7.2vw,6.4rem)]"
+          }`}
+        >
           {heading}
         </h1>
         {slide.sub ? (
-          <p className="mt-10 max-w-xl text-[clamp(1.1rem,2.1vw,1.5rem)] leading-snug text-[var(--muted)]">
+          <p
+            className={`mt-10 leading-snug text-[var(--muted)] ${
+              hasMedia
+                ? "max-w-xl text-[clamp(1.1rem,2.1vw,1.5rem)]"
+                : "max-w-3xl text-[clamp(1.2rem,2.3vw,1.7rem)]"
+            }`}
+          >
             {slide.sub}
           </p>
         ) : null}
