@@ -91,10 +91,10 @@ export const slides: Slide[] = [
   {
     variant: "statement",
     year: "2006",
-    lines: ["Informação escassa.", "Atalho nenhum."],
-    sub: "O músculo era sentar com o problema.",
+    lines: ["Eu lia manuais."],
+    sub: "O livro ficava aberto ao lado do código.",
     notes:
-      "A geração deles vive o contrário — resposta demais. O músculo que você foi forçado a ter hoje é escolha. Sem “vocês têm que”.",
+      "O ofício era ler. Manual, livro, página marcada. Sem aula de “vocês têm que ler mais”. Só o que você fazia.",
   },
   {
     variant: "desktop",
