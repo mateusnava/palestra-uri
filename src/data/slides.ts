@@ -521,10 +521,10 @@ export const slides: Slide[] = [
   {
     variant: "statement",
     year: "2024",
-    lines: ["Passei a trabalhar", "orientando o prompt."],
+    lines: ["Passei a trabalhar", "orientado a prompt."],
     sub: "Cursor foi a ferramenta escolhida.",
     notes:
-      "O ofício, não o produto. Dirigir pelo prompt. Cursor foi a escolha, não o ponto. Sem feature list.",
+      "O ofício, não o produto. Orientado a prompt, como orientado a objeto. Cursor foi a escolha, não o ponto. Sem feature list.",
   },
   {
     variant: "statement",
