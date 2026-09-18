@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { AiFlow } from "@/components/ai-flow";
+import { AcqChain } from "@/components/acq-chain";
+import { CraftShift } from "@/components/craft-shift";
+import { DevShift } from "@/components/dev-shift";
 import { DelphiWindow } from "@/components/delphi-window";
 import type { Slide } from "@/data/slides";
 
@@ -125,9 +128,6 @@ export function SlideView({ slide }: SlideViewProps) {
         <div className="ai-field" aria-hidden>
           <span className="ai-bloom" />
         </div>
-        {slide.year ? (
-          <p className="kicker relative z-10 mb-8">{slide.year}</p>
-        ) : null}
         <h1 className="ai-title display relative z-10 max-w-[18ch] text-[clamp(3.4rem,9.2vw,8rem)]">
           {heading}
         </h1>
@@ -143,11 +143,16 @@ export function SlideView({ slide }: SlideViewProps) {
 
   if (slide.variant === "emphasis") {
     return (
-      <div className="flex min-h-0 flex-1 flex-col justify-center gap-10 lg:flex-row lg:items-center lg:justify-between">
-        <div className="min-w-0">
+      <div className="flex min-h-0 flex-1 flex-col justify-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+        <div className={slide.diagram === "dev-shift" ? "shrink-0" : "min-w-0"}>
           {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
-          {slide.year ? <p className="kicker mb-8">{slide.year}</p> : null}
-          <h1 className="display max-w-4xl text-[clamp(2.8rem,7vw,6.2rem)]">
+          <h1
+            className={`display ${
+              slide.diagram === "dev-shift"
+                ? "[&>span]:whitespace-nowrap text-[clamp(2.2rem,5vw,4.4rem)]"
+                : "max-w-4xl text-[clamp(2.8rem,7vw,6.2rem)]"
+            }`}
+          >
             {heading}
           </h1>
           {slide.sub ? (
@@ -156,7 +161,11 @@ export function SlideView({ slide }: SlideViewProps) {
             </p>
           ) : null}
         </div>
-        {slide.figure ? (
+        {slide.diagram === "dev-shift" ? (
+          <DevShift />
+        ) : slide.diagram === "acq-chain" ? (
+          <AcqChain />
+        ) : slide.figure ? (
           <div
             className={`relative shrink-0 ${
               slide.figureWide
@@ -182,7 +191,6 @@ export function SlideView({ slide }: SlideViewProps) {
     return (
       <div className="flex min-h-0 flex-1 flex-col justify-center gap-12 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-xl">
-          {slide.year ? <p className="kicker mb-8">{slide.year}</p> : null}
           {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
           <h1 className="display text-[clamp(2.1rem,4.6vw,4rem)]">{heading}</h1>
         </div>
@@ -246,6 +254,45 @@ export function SlideView({ slide }: SlideViewProps) {
     );
   }
 
+  if (slide.variant === "columns") {
+    return (
+      <div className="flex min-h-0 flex-1 flex-col justify-center">
+        <div className="grid gap-14 md:grid-cols-2 md:gap-0">
+          {(slide.columns ?? []).map((column, index) => (
+            <article
+              key={column.lines.join("|")}
+              className={`min-w-0 ${
+                index > 0
+                  ? "border-[var(--line)] md:border-l md:pl-16 lg:pl-20"
+                  : "md:pr-16 lg:pr-20"
+              }`}
+            >
+              <p className="finale-index">{String(index + 1).padStart(2, "0")}</p>
+              <h1 className="display mt-6 text-[clamp(2.1rem,4.4vw,3.6rem)] text-[var(--sand)]">
+                {column.lines.map((line, lineIndex) => (
+                  <span key={line} className="block">
+                    {line}
+                    {lineIndex < column.lines.length - 1 ? " " : null}
+                  </span>
+                ))}
+              </h1>
+              {column.sub ? (
+                <p className="mt-8 max-w-md text-[clamp(1.1rem,2vw,1.45rem)] leading-snug text-[var(--muted)]">
+                  {column.sub}
+                </p>
+              ) : null}
+              {column.footer ? (
+                <p className="mt-8 max-w-md text-[1.05rem] text-[var(--muted)]">
+                  {column.footer}
+                </p>
+              ) : null}
+            </article>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   if (slide.variant === "finale") {
     const pillars = slide.items ?? [];
 
@@ -300,6 +347,7 @@ export function SlideView({ slide }: SlideViewProps) {
   }
 
   const hasMedia = Boolean(slide.gallery || slide.figure);
+  const hasChart = slide.diagram === "craft-shift";
 
   return (
     <div
@@ -308,13 +356,14 @@ export function SlideView({ slide }: SlideViewProps) {
       }`}
     >
       <div className="min-w-0">
-        {slide.year ? <p className="kicker mb-8">{slide.year}</p> : null}
         {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
         <h1
           className={`display ${
             hasMedia
               ? "max-w-xl text-[clamp(2.3rem,5.8vw,5.1rem)]"
-              : "max-w-5xl text-[clamp(2.8rem,7.2vw,6.4rem)]"
+              : hasChart
+                ? "max-w-5xl text-[clamp(2rem,4.4vw,3.6rem)]"
+                : "max-w-5xl text-[clamp(2.8rem,7.2vw,6.4rem)]"
           }`}
         >
           {heading}
@@ -334,6 +383,7 @@ export function SlideView({ slide }: SlideViewProps) {
           <p className="mt-8 text-[1.05rem] text-[var(--muted)]">{slide.footer}</p>
         ) : null}
         {slide.diagram === "ai-flow" ? <AiFlow /> : null}
+        {slide.diagram === "craft-shift" ? <CraftShift /> : null}
       </div>
       {slide.gallery ? (
         <div

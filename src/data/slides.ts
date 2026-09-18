@@ -9,11 +9,18 @@ export type SlideVariant =
   | "desktop"
   | "ai"
   | "finale"
-  | "close";
+  | "close"
+  | "columns";
 
 export type TimelineRow = {
   year: string;
   event: string;
+};
+
+export type SlideColumn = {
+  lines: string[];
+  sub?: string;
+  footer?: string;
 };
 
 export type Slide = {
@@ -22,6 +29,7 @@ export type Slide = {
   lines: string[];
   sub?: string;
   items?: string[];
+  columns?: SlideColumn[];
   footer?: string;
   image?: string;
   imageAlt?: string;
@@ -33,7 +41,7 @@ export type Slide = {
   figureWide?: boolean;
   gallery?: string[];
   timeline?: TimelineRow[];
-  diagram?: "ai-flow";
+  diagram?: "ai-flow" | "dev-shift" | "acq-chain" | "craft-shift";
   variant: SlideVariant;
   notes: string;
 };
@@ -55,7 +63,7 @@ export const slides: Slide[] = [
     items: [
       "Formado pela URI",
       "Comecei a trabalhar em 2006",
-      "Apaixonado por produto que faz sentido para quem usa",
+      "Apaixonado por produtos que fazem sentido para quem usa",
       "Florianópolis — SC 🏖️",
       "Cofundador de duas startups: m2o e Catapulta",
     ],
@@ -65,13 +73,13 @@ export const slides: Slide[] = [
   {
     variant: "list",
     kicker: "Hoje",
-    lines: ["Meus objetivos"],
+    lines: ["Objetivos", "nessa palestra"],
     items: [
       "Entender que a IA mudou radicalmente como se constrói software.",
       "Ser uma pessoa legal.",
     ],
     notes:
-      "Dois só. O primeiro é o ofício. O segundo é o caráter. Pessoa legal é o ponto. Não explique. Segue a agenda.",
+      "Objetivos da palestra, não da vida. Dois só. O primeiro é o ofício. O segundo é o caráter. Pessoa legal é o ponto. Desembala: parceiro, se importar, relações. Sem sermão. Segue a agenda.",
   },
   {
     variant: "list",
@@ -80,11 +88,10 @@ export const slides: Slide[] = [
     items: [
       "Uma história. 2006 até agora.",
       "A virada da IA no trabalho.",
-      "O que é, de verdade.",
       "O que não muda.",
     ],
     notes:
-      "Quatro batidas. Sem horário. Aí o gelo. Depois Plutão.",
+      "Três batidas. Sem horário. O ‘o que é’ entra na virada, raso de propósito. Aí o gelo. Depois Plutão.",
   },
   {
     variant: "statement",
@@ -122,20 +129,21 @@ export const slides: Slide[] = [
       "A ponte humana. Desktop, Delphi, sem mapa. Deixa o gosto aparecer antes da escassez.",
   },
   {
-    variant: "statement",
+    variant: "columns",
     year: "2006",
-    lines: ["A resposta vinha", "pelo correio."],
-    sub: "Google era escasso. Delphi Magazine era o caminho.",
+    lines: ["A resposta vinha pelo correio.", "Eu lia manuais."],
+    columns: [
+      {
+        lines: ["A resposta vinha", "pelo correio."],
+        sub: "Google era escasso. Delphi Magazine era o caminho.",
+      },
+      {
+        lines: ["Eu lia manuais."],
+        sub: "O livro ficava aberto ao lado do código.",
+      },
+    ],
     notes:
-      "Agora sim a revista. Calibrar velocidade. Não virar stand-up de antigamente.",
-  },
-  {
-    variant: "statement",
-    year: "2006",
-    lines: ["Eu lia manuais."],
-    sub: "O livro ficava aberto ao lado do código.",
-    notes:
-      "O ofício era ler. Manual, livro, página marcada. Sem aula de “vocês têm que ler mais”. Só o que você fazia.",
+      "Revista e livro no mesmo quadro. Calibrar velocidade. Não virar stand-up de antigamente. O ofício era ler — sem aula de “vocês têm que ler mais”.",
   },
   {
     variant: "desktop",
@@ -175,49 +183,53 @@ export const slides: Slide[] = [
   {
     variant: "statement",
     year: "2007",
-    lines: ["Maratona de programação.", "Conceito. Base."],
-    sub: "A linguagem da vez nunca me carregou.",
+    lines: ["Maratona de programação."],
+    sub: "Lógica, raciocínio rápido e adrenalina.",
     figure: "/maratona.jpg",
     figureAlt: "Recorte de jornal da Maratona de Programação da URI",
     figureShape: "plain",
     notes:
-      "Maratona como jeito de pensar, não como troféu. O jornal é prova, não altar. Bases como passaporte entre stacks.",
+      "Maratona como jeito de pensar, não como troféu. O jornal é prova, não altar. Lógica, velocidade, adrenalina.",
   },
   {
     variant: "emphasis",
-    lines: ["Presta atenção", "na teoria."],
+    lines: ["A teoria importa."],
     sub: "Você vai gastá-la em empregos que ainda não existem.",
+    figure: "/teoria-lousa.png",
+    figureAlt: "Lousa com grafos e geometria",
+    figureWide: true,
     notes:
-      "É recado para você, o de 2007. Se servir para alguém na sala, ótimo. Se não, também.",
+      "Não é ordem. É o que ficou de 2007. Se servir para alguém na sala, ótimo. Se não, também.",
   },
   {
     variant: "milestone",
     year: "2008",
-    lines: ["Cielo ganhou o ouro", "em Pequim."],
+    lines: ["A TV digital", "chegou ao Brasil."],
     sub: "Enquanto isso, eu caí na NF-e.",
-    figure: "/cielo-pequim-2008.png",
-    figureAlt: "Medalha de ouro de Pequim 2008",
+    figure: "/tv-digital-2008.png",
+    figureAlt: "Televisão e conversor digital",
     figureShape: "plain",
     notes:
-      "Quebra-gelo de 2008. Primeiro ouro da natação brasileira, 50m livre. Um segundo de orgulho. Aí a NF-e. Não vire transmissão esportiva.",
+      "Quebra-gelo de 2008. Conversor, antena, HD. A inauguração oficial foi em São Paulo, dezembro de 2007; 2008 é quando o país sentiu. Um segundo de reconhecimento. Aí a NF-e. Não vire aula de ISDB.",
   },
   {
-    variant: "statement",
+    variant: "columns",
     year: "2008",
-    lines: ["Cheguei como estagiário."],
-    sub: "Me deram uma DANFE e falaram: é isso que você vai implementar.",
-    footer: "Google existia. A resposta, não.",
+    lines: ["Cheguei como estagiário.", "Emitimos NF-e via Dataflex."],
+    columns: [
+      {
+        lines: ["Cheguei como", "estagiário."],
+        sub: "Me deram uma DANFE e falaram: é isso que você vai implementar.",
+        footer: "Google existia. A resposta, não.",
+      },
+      {
+        lines: ["Emitimos NF-e", "via Dataflex."],
+        sub: "Integrações ousadas, escritas em C e BashScript.",
+        footer: "Só codar não adianta. Precisa entender produto — e gente.",
+      },
+    ],
     notes:
-      "A cena. Estágio, papel, lei. O país inventando o documento em público. Stack Overflow incipiente.",
-  },
-  {
-    variant: "statement",
-    year: "2008",
-    lines: ["Emitimos NF-e", "via Dataflex."],
-    sub: "Integrações Legalis, escritas em C.",
-    footer: "Só codar não adianta. Precisa entender produto — e gente.",
-    notes:
-      "O projeto foi bacana. A stack é detalhe. O que ficou: produto, conversa, e que código sozinho não resolve.",
+      "A cena e o projeto no mesmo quadro. Estágio, DANFE, lei. Google existia, a resposta não. Dataflex, C e Bash são detalhe. O que ficou: produto, conversa, e que código sozinho não resolve.",
   },
   {
     variant: "list",
@@ -246,54 +258,58 @@ export const slides: Slide[] = [
       "Quebra-gelo de 2010. Recados, comunidades, scrap. Um segundo de reconhecimento. Aí o portal.",
   },
   {
-    variant: "statement",
+    variant: "columns",
     year: "2010",
-    lines: ["Vivo.com.br", "PHP → Java"],
-    sub: "Não faltava informação. Sobrava sistema.",
+    lines: ["Vivo.com.br PHP → Java", "Primeira empresa grande."],
+    columns: [
+      {
+        lines: ["Vivo.com.br", "PHP → Java"],
+        sub: "Um caos para outro caos 😂",
+      },
+      {
+        lines: ["Primeira empresa", "grande."],
+        sub: "Passei a viajar pra São Paulo. Conheci muita gente. Trabalhei num projeto gigante.",
+      },
+    ],
     notes:
-      "Produto grande, legado, marca, muita gente. Carreira como sequência de tipos de dificuldade, não de ferramentas.",
-  },
-  {
-    variant: "statement",
-    year: "2010",
-    lines: ["Primeira empresa grande."],
-    sub: "Passei a viajar pra São Paulo. Conheci muita gente. Trabalhei num projeto gigante.",
-    notes:
-      "Escala, aeroporto, nomes novos. O aprendizado foi real. Não transforme em tour de consultoria.",
+      "Produto grande, legado, marca. Um caos para outro. Aí a escala: aeroporto, nomes novos, projeto gigante. Não transforme em tour de consultoria.",
   },
   {
     variant: "emphasis",
     lines: ["A vida é muito mais", "que o trabalho."],
-    sub: "Trabalhei demais. Hora extra, noites em claro. Não vale a pena. Nenhuma camiseta de empresa. Cuidar da cabeça. Estar presente.",
+    sub: "Nesse projeto eu trabalhei demais. Hora extra, noites em claro. Não vale a pena. Vestir a camiseta é fazer o que tem que ser feito — no horário.",
+    figure: "/horario-ponto.png",
+    figureAlt: "Relógio de ponto às 18h",
     notes:
-      "A Vivo cobrou o corpo. Primeira pessoa, sem sermão e sem gratidão obrigatória. Fecha e segue.",
+      "A Vivo cobrou o corpo. Camiseta não é hora extra. Primeira pessoa, sem sermão. Fecha e segue.",
   },
   {
     variant: "milestone",
     year: "2012",
-    lines: ["O mundo ia acabar."],
+    lines: ["A Curiosity pousou", "em Marte."],
     sub: "Enquanto isso, eu comecei no Rails.",
-    figure: "/maia-2012.png",
-    figureAlt: "Calendário maia",
-    figureShape: "circle",
+    figure: "/curiosity-2012.jpg",
+    figureAlt: "Rover Curiosity em Marte",
+    figureShape: "plain",
     notes:
-      "Quebra-gelo de 2012. 21 de dezembro, calendário maia. Deixa rir. Aí o Rails. Não explique Mesoamérica.",
+      "Quebra-gelo de 2012. 6 de agosto, o rover no solo vermelho. Deixa a sala reconhecer. Aí o Rails. Não vire aula da NASA.",
   },
   {
-    variant: "statement",
+    variant: "columns",
     year: "2012",
-    lines: ["Rails. Ruby.", "Simplicidade."],
-    sub: "Dali nasceu uma paixão que não é de linguagem.",
+    lines: ["Rails. Ruby.", "RS On Rails."],
+    columns: [
+      {
+        lines: ["Rails. Ruby."],
+        sub: "Nasceu uma paixão pela simplicidade.",
+      },
+      {
+        lines: ["RS On Rails."],
+        sub: "O evento me conquistou.",
+      },
+    ],
     notes:
-      "Paixão por Rails e Ruby, convertida: simplicidade como valor. Qual linguagem eu uso? Não importa muito.",
-  },
-  {
-    variant: "statement",
-    year: "2012",
-    lines: ["RSOnRails.", "Porto Alegre."],
-    sub: "Fui com um amigo. Eu já conhecia. O evento me conquistou.",
-    notes:
-      "A viagem. O amigo. O click. Não vire recap de palestra — o que importou foi o gosto pela simplicidade.",
+      "Paixão por Rails e Ruby, convertida: simplicidade como valor. A viagem, o amigo, o click. Não vire recap de palestra.",
   },
   {
     variant: "statement",
@@ -315,44 +331,38 @@ export const slides: Slide[] = [
       "Quebra-gelo de 2019. Deixa a sala reconhecer o anel. Aí o pivot: Porto Alegre, Gcom. Não explique relatividade.",
   },
   {
-    variant: "statement",
+    variant: "columns",
     year: "2019",
-    lines: ["Fui por um amigo."],
-    sub: "Ele já tinha ido. Eu fui atrás.",
+    lines: ["Lembra do RS On Rails?", "A Globo era referência."],
+    columns: [
+      {
+        lines: ["Lembra do", "RS On Rails?"],
+        sub: "Foi lá que eu me apaixonei pela Globo. O palco estava cheio deles.",
+      },
+      {
+        lines: ["A Globo era", "referência."],
+        sub: "Desenvolvimento, na época. Foi simplesmente incrível.",
+      },
+    ],
     notes:
-      "Influência concreta. Sem teoria de networking. Um nome na sala se você quiser.",
+      "Fecha o loop de 2012. Fui por um amigo — ele já tinha ido, eu fui atrás. O evento plantou a empresa. Um segundo de admiração. Sem recap de palestra.",
   },
   {
-    variant: "statement",
+    variant: "columns",
     year: "2019",
-    lines: ["Lembra do RSOnRails?"],
-    sub: "Foi lá que eu me apaixonei pela Globo. O palco estava cheio deles.",
+    lines: ["Mudei de cidade. Mudei de porte.", "Trabalhei com vídeo."],
+    columns: [
+      {
+        lines: ["Mudei de cidade.", "Mudei de porte."],
+        sub: "Porto Alegre. Uma gigante.",
+      },
+      {
+        lines: ["Trabalhei com", "vídeo."],
+        sub: "Tudo que saía do estúdio passava pelo software do nosso time antes de ir pra internet.",
+      },
+    ],
     notes:
-      "Fecha o loop de 2012. O evento plantou a empresa. Sem recap de palestra.",
-  },
-  {
-    variant: "statement",
-    year: "2019",
-    lines: ["A Globo era referência."],
-    sub: "Desenvolvimento, na época. Foi simplesmente incrível.",
-    notes:
-      "O prestígio da casa, sem folder. Um segundo de admiração. Depois a mudança de vida.",
-  },
-  {
-    variant: "statement",
-    year: "2019",
-    lines: ["Mudei de cidade.", "Mudei de porte."],
-    sub: "Porto Alegre. Uma gigante.",
-    notes:
-      "A escala humana da mudança. Cidade, empresa, corpo. Não vire comparativo de salário.",
-  },
-  {
-    variant: "statement",
-    year: "2019",
-    lines: ["Trabalhei com vídeo."],
-    sub: "Tudo que saía do estúdio passava pelo software do nosso time antes de ir pra internet.",
-    notes:
-      "A cena concreta. Estúdio → nosso software → internet. O time no meio do caminho. Sem stack.",
+      "A escala humana da mudança. Cidade, empresa, corpo. Aí a cena: estúdio → nosso software → internet. Sem salário, sem stack.",
   },
   {
     variant: "statement",
@@ -364,17 +374,21 @@ export const slides: Slide[] = [
       "/poa-maratona.jpg",
       "/poa-cachorros.jpg",
       "/poa-show.jpg",
+      "/poa-time.jpg",
     ],
     notes:
-      "Um mosaico da cidade. Arena, lago, corrida, cachorros, chuva no show. Deixa a sala ver a vida. Sem narrar cada foto.",
+      "Um mosaico da cidade. Arena, lago, corrida, cachorros, chuva no show, o time na sinuca. Deixa a sala ver a vida. Sem narrar cada foto.",
   },
   {
     variant: "statement",
     year: "2019",
     lines: ["As conexões", "importam demais."],
-    sub: "Fiz muitos amigos em POA. Veio a pandemia. As conexões ficaram.",
+    sub: "Fiz muitos amigos em POA. Conexões pra vida. Conexões profissionais.",
+    figure: "/poa-time.jpg",
+    figureAlt: "O time em Porto Alegre",
+    figureWide: true,
     notes:
-      "Amizade primeiro, pandemia como corte, conexão como o que sobra. Sem aula de networking.",
+      "Amizade e carreira. Sem pandemia. Sem aula de networking.",
   },
   {
     variant: "milestone",
@@ -425,28 +439,21 @@ export const slides: Slide[] = [
       "O escritório vira arquibancada. A rede que ficou. Sem discurso de networking.",
   },
   {
-    variant: "statement",
+    variant: "columns",
     year: "2021",
-    lines: ["Pessoas incríveis."],
-    sub: "Empresa incrível. Como sempre, eu valorizo isso demais.",
+    lines: ["Virei tech lead.", "Codei muito em Rails."],
+    columns: [
+      {
+        lines: ["Virei tech lead."],
+        sub: "O motivo: comunicação excelente.",
+      },
+      {
+        lines: ["Codei muito", "em Rails."],
+        sub: "Amava esse trabalho.",
+      },
+    ],
     notes:
-      "Experiência, casa, gente. O valor é o mesmo de sempre. Sem folder da empresa.",
-  },
-  {
-    variant: "statement",
-    year: "2021",
-    lines: ["Virei tech lead."],
-    sub: "O motivo: comunicação excelente.",
-    notes:
-      "Não foi o Rails. Foi falar, escrever, alinhar. Fecha o slide do inglês sem apontar o dedo.",
-  },
-  {
-    variant: "statement",
-    year: "2021",
-    lines: ["Codei muito em Rails."],
-    sub: "Amava esse trabalho.",
-    notes:
-      "A paixão de 2012 ainda estava viva. Um segundo de gosto. Sem stack review.",
+      "Não foi o Rails. Foi falar, escrever, alinhar. Fecha o inglês sem apontar o dedo. A paixão de 2012 ainda estava viva. Pessoas e casa, se couber na fala. Sem folder.",
   },
   {
     variant: "statement",
@@ -462,27 +469,54 @@ export const slides: Slide[] = [
     lines: ["Mas isso era", "só o começo."],
     sub: "Muita coisa estava por vir.",
     notes:
-      "O divisor. Deixa o campo novo entrar. Não antecipe Cursor, Miro, agentes. Só o pressentimento.",
+      "O divisor. Daqui: o que é e como funciona. Depois a história segue em 2024.",
+  },
+  {
+    variant: "list",
+    year: "hoje",
+    lines: ["O que é IA?"],
+    items: [
+      "Não é um arquivo. É um palpite: qual a próxima palavra.",
+      "Tipo o autocomplete do celular — só que leu a internet.",
+      "Ela não pesquisa. Ela completa a sua frase.",
+    ],
+    notes:
+      "Analogia, não glossário. Autocomplete, não Wikipedia. Completar, não buscar. Sem LLM, sem token.",
+  },
+  {
+    variant: "list",
+    year: "hoje",
+    lines: ["Como funciona?"],
+    items: [
+      "Parte o que você disse em pedaços — goles, não o copo.",
+      "Olha o que já veio. Chuta o que vem depois.",
+      "Uma palavra. Depois outra. Até parar.",
+    ],
+    footer: "Se inventa, é o mesmo chute. Só que errou.",
+    notes:
+      "O loop é o ponto. Sem logits. Alucinação = o mesmo palpite, com cara de certeza.",
   },
   {
     variant: "milestone",
     year: "2024",
-    lines: ["As enchentes no", "Rio Grande do Sul."],
+    lines: ["A Rebeca ganhou", "o ouro em Paris."],
     sub: "Enquanto isso, eu entrei na primeira startup de SF.",
-    figure: "/enchente-rs-2024.jpg",
-    figureAlt: "Enchentes no Rio Grande do Sul, 2024",
+    figure: "/rebeca-paris-2024.jpg",
+    figureAlt: "Rebeca Andrade no solo em Paris 2024",
     figureShape: "plain",
-    figureWide: true,
     notes:
-      "2024 pesa. Maio, o Estado debaixo d’água. Um segundo de silêncio. Sem número, sem espetáculo. Aí o pivot: primeira startup de SF.",
+      "Quebra-gelo de 2024. Solo, ouro, a sala reconhece. Um segundo de orgulho. Aí o pivot: primeira startup de SF. Não vire transmissão esportiva.",
   },
   {
     variant: "statement",
     year: "2024",
-    lines: ["Uma startup", "do Vale."],
-    sub: "Trabalhar ali me fez perceber que tudo estava mudando.",
+    lines: ["Koala:", "Uma startup", "do Vale."],
+    sub: "Trabalhar ali me deixou orientado: tudo estava mudando.",
+    figure: "/sf-vale.jpg",
+    figureAlt: "Golden Gate em São Francisco",
+    figureWide: true,
     notes:
-      "O choque de densidade. Não vire folder do Vale. O que importa é a percepção: o chão se moveu.",
+      "O nome primeiro. A ponte fala SF. Não vire folder do Vale. O que importa é a percepção: o chão se moveu.",
   },
   {
     variant: "statement",
@@ -503,16 +537,17 @@ export const slides: Slide[] = [
   {
     variant: "statement",
     year: "2024",
-    lines: ["A regra era shipar."],
+    lines: ["A regra era", "entregar. Rápido."],
     sub: "A startup era 100% isso. IA acelerando tudo.",
     notes:
-      "Velocidade como cultura, não como slogan. Shipar. A IA no meio do caminho. Sem glamourizar burnout.",
+      "Velocidade como cultura, não como slogan. Entregar. A IA no meio do caminho. Sem glamourizar burnout.",
   },
   {
     variant: "emphasis",
     lines: ["O desenvolvimento", "virou outra coisa."],
+    diagram: "dev-shift",
     notes:
-      "A mudança drástica, sem lista. Deixa a sala sentar com a frase. Depois o julgamento.",
+      "A frase segura a sala. O quadro só aponta o deslocamento: escrever, esperar, executar. Sem ler em voz alta. Depois o julgamento.",
   },
   {
     variant: "statement",
@@ -646,49 +681,32 @@ export const slides: Slide[] = [
     variant: "emphasis",
     lines: ["E agora?"],
     sub: "Não sei. Isso tudo é muito recente.",
+    diagram: "acq-chain",
     notes:
-      "Primeira pessoa, sem pose. A sala vê que a história ainda está quente. Abre o fecho.",
-  },
-  {
-    variant: "list",
-    year: "2006 — 2026",
-    lines: ["O que eu vi", "se repetir"],
-    items: ["Clareza.", "Simplicidade.", "Responsabilidade.", "Gentileza firme."],
-    footer: "Aqui ou na Califórnia.",
-    notes:
-      "Não é “precisa ir embora”. Não é “façam como eu”. Em SF, gente com quem dava para construir era mais rara que talento.",
+      "A sequência é a piada. Não leia os nomes. A sala já viu as três. O título segura. Sem deal.",
   },
   {
     variant: "milestone",
     year: "hoje",
     lines: ["A IA mudou como", "a gente pensa e", "constrói software."],
+    figure: "/hoje-ia.jpg",
+    figureAlt: "Wafer de silício",
     notes:
-      "A porta. Daqui, três slides: o que é, o fluxo, as ferramentas. Sem AGI. Sem aula de 40 minutos.",
+      "A porta do fecho. O disco é a ferramenta da era, não uma aula de chip. Sem AGI. Sem aula de 40 minutos.",
+  },
+  {
+    variant: "list",
+    year: "2006 — 2026",
+    lines: ["O que eu vi", "se repetir"],
+    items: ["Clareza.", "Simplicidade.", "Responsabilidade.", "Gentileza."],
+    footer: "Aqui ou na Califórnia.",
+    notes:
+      "Não é “precisa ir embora”. Não é “façam como eu”. Em SF, gente com quem dava para construir era mais rara que talento.",
   },
   {
     variant: "list",
     year: "hoje",
-    lines: ["O que é IA?"],
-    items: [
-      "LLM — a rede. Bilhões de pesos. Não é um banco de fatos.",
-      "Token — um pedaço de texto. Às vezes uma palavra, às vezes menos.",
-      "Objetivo — prever o próximo token.",
-    ],
-    notes:
-      "Três nomes. A sala precisa deles antes do fluxo. Não é busca. Não é um colega. Completar a sequência.",
-  },
-  {
-    variant: "statement",
-    year: "hoje",
-    lines: ["Como funciona?"],
-    diagram: "ai-flow",
-    notes:
-      "Ande o fluxo com o dedo. Tokenize, janela, logits, sample. O loop é o ponto: um token de cada vez. Alucinação é o mesmo mecanismo. Sem desenhar a rede.",
-  },
-  {
-    variant: "list",
-    year: "hoje",
-    lines: ["O que eu uso", "agora"],
+    lines: ["O que se usa", "agora"],
     items: [
       "Cursor — editor, índice do repo, o modelo no loop.",
       "Claude Code — agente no terminal.",
@@ -698,6 +716,23 @@ export const slides: Slide[] = [
     footer: "A casca muda. Embaixo é o mesmo modelo.",
     notes:
       "Arquitetura, não review. IDE+index, CLI agente, autocomplete. Sem demo. Sem ranking.",
+  },
+  {
+    variant: "statement",
+    year: "hoje",
+    lines: ["A mudança", "que eu vi."],
+    diagram: "craft-shift",
+    notes:
+      "O quadro é a palestra em miniatura. 2006 contra hoje. Não leia as quatro. Aponta o abismo. Depois o ciclo.",
+  },
+  {
+    variant: "statement",
+    lines: ["O ciclo."],
+    figure: "/ciclo-oficio-v2.png",
+    figureAlt: "Ferramentas em volta; no centro, pessoas e base de conhecimento",
+    figureWide: true,
+    notes:
+      "O anel muda: livro, carta, tela, editor. O centro não: gente e base. Não dê aula. Um segundo. Depois: ainda se programa.",
   },
   {
     variant: "emphasis",

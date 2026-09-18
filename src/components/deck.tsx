@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { slides } from "@/data/slides";
+import { EraTimeline } from "@/components/era-timeline";
 import { SlideView } from "@/components/slide-view";
 
 function clampIndex(value: number) {
@@ -154,15 +155,8 @@ export function Deck({ startIndex }: { startIndex?: number }) {
         </div>
       ) : null}
 
-      <a
-        href="/slides"
-        onClick={(event) => event.stopPropagation()}
-        className="absolute right-[8vw] top-7 z-30 font-sans text-[0.68rem] tracking-[0.28em] uppercase text-[var(--muted)] transition hover:text-[var(--copper)]"
-      >
-        Índice
-      </a>
-
       <div className="relative z-10 flex min-h-dvh flex-col px-[8vw] pb-16 pt-[9vh]">
+        <EraTimeline index={index} onGo={go} />
         <SlideView key={slide.lines.join("|")} slide={slide} />
       </div>
 

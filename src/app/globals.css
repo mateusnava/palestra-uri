@@ -303,6 +303,223 @@ body {
   color: var(--muted);
 }
 
+.dev-shift {
+  width: min(42vw, 26rem);
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.dev-shift-head {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.85rem;
+  margin: 0 0 1.15rem;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+.dev-shift-head span:last-child {
+  text-align: right;
+}
+
+.dev-shift ol {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dev-shift li {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 1.05rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.dev-shift li:last-child {
+  padding-bottom: 0;
+}
+
+.dev-shift-before,
+.dev-shift-after {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+  line-height: 1.05;
+}
+
+.dev-shift-before {
+  color: var(--muted);
+}
+
+.dev-shift-after {
+  color: inherit;
+  text-align: right;
+}
+
+.dev-shift-arrow {
+  width: 1.55rem;
+  height: 1px;
+  align-self: center;
+  background: var(--copper);
+}
+
+@media (max-width: 1023px) {
+  .dev-shift {
+    width: min(100%, 28rem);
+  }
+}
+
+.acq-chain {
+  width: min(48vw, 30rem);
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.acq-chain-kicker {
+  margin: 0 0 1rem;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+.acq-chain ol {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.acq-chain li {
+  display: grid;
+  grid-template-columns: auto 1fr auto minmax(0, 1.3fr);
+  align-items: baseline;
+  gap: 0.75rem 0.9rem;
+  padding: 1.05rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.acq-chain li:last-child {
+  padding-bottom: 0;
+}
+
+.acq-n {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: var(--copper);
+}
+
+.acq-from,
+.acq-to {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.1;
+}
+
+.acq-from {
+  color: var(--muted);
+}
+
+.acq-to {
+  color: inherit;
+}
+
+.acq-arrow {
+  width: 1.4rem;
+  height: 1px;
+  align-self: center;
+  background: var(--copper);
+}
+
+@media (max-width: 1023px) {
+  .acq-chain {
+    width: min(100%, 30rem);
+  }
+}
+
+.craft-shift {
+  width: min(100%, 52rem);
+  margin: 2.6rem 0 0;
+}
+
+.craft-shift-head {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0 0 0.35rem;
+}
+
+.craft-shift-head span:first-child,
+.craft-shift-head span:last-child {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.craft-shift-head span:first-child {
+  color: var(--muted);
+}
+
+.craft-shift-head span:last-child {
+  color: var(--copper);
+  text-align: right;
+}
+
+.craft-shift ol {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.craft-shift li {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: baseline;
+  gap: 1rem 1.2rem;
+  padding: 1.05rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.craft-shift li:last-child {
+  padding-bottom: 0;
+}
+
+.craft-shift-before,
+.craft-shift-after {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
+  line-height: 1.2;
+}
+
+.craft-shift-before {
+  color: var(--muted);
+}
+
+.craft-shift-after {
+  color: inherit;
+  text-align: right;
+}
+
+.craft-shift-arrow {
+  width: clamp(1.4rem, 3vw, 2.2rem);
+  height: 1px;
+  align-self: center;
+  background: var(--copper);
+}
+
 .xp-window {
   width: min(920px, 92%);
   overflow: hidden;
@@ -451,6 +668,130 @@ body {
   color: #333;
 }
 
+.era-timeline {
+  pointer-events: auto;
+  position: absolute;
+  top: 1.5rem;
+  right: 8vw;
+  left: 8vw;
+  z-index: 30;
+}
+
+.era-timeline__track {
+  position: relative;
+  height: 2rem;
+}
+
+.era-timeline__track::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: var(--line);
+  transform: translateY(-50%);
+}
+
+.era-timeline__fill {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  background: var(--copper);
+  transform: translateY(-50%);
+  transition: width 500ms ease-out;
+}
+
+.era-timeline__labels {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.era-timeline__year {
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: transparent;
+  padding: 0.35rem 0;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.68rem, 1.15vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 280ms ease, opacity 280ms ease;
+}
+
+.era-timeline__year.is-past {
+  opacity: 0.72;
+}
+
+.era-timeline__year.is-current {
+  color: var(--copper);
+  opacity: 1;
+}
+
+.era-timeline__year.is-future {
+  opacity: 0.32;
+}
+
+.era-timeline__year:hover,
+.era-timeline__year:focus-visible {
+  color: var(--sand);
+  opacity: 1;
+  outline: none;
+}
+
+.deck.milestone .era-timeline__track::before {
+  background: rgba(243, 236, 224, 0.22);
+}
+
+.deck.milestone .era-timeline__fill {
+  background: var(--sand);
+}
+
+.deck.milestone .era-timeline__year.is-current {
+  color: var(--sand);
+}
+
+.deck.light .era-timeline__track::before {
+  background: var(--line);
+}
+
+.deck.light .era-timeline__year.is-current {
+  color: var(--copper);
+}
+
+.deck.desktop .era-timeline__track::before {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.deck.desktop .era-timeline__fill {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.deck.desktop .era-timeline__year {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.deck.desktop .era-timeline__year.is-current {
+  color: #fff;
+}
+
+.deck.ai .era-timeline__year.is-current {
+  color: var(--copper);
+}
+
+@media (max-width: 900px) {
+  .era-timeline__year {
+    font-size: clamp(0.58rem, 2.4vw, 0.72rem);
+    letter-spacing: 0.12em;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .deck,
   .deck .display,
@@ -460,6 +801,10 @@ body {
   .deck .mt-10,
   .deck .mt-16 {
     animation: none;
+    transition: none;
+  }
+
+  .era-timeline__fill {
     transition: none;
   }
 }
