@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# live slide shared by the projector and the phone
+/data/deck-live.json

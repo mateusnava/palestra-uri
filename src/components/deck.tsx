@@ -5,6 +5,7 @@ import Image from "next/image";
 import { slides } from "@/data/slides";
 import { EraTimeline } from "@/components/era-timeline";
 import { SlideView } from "@/components/slide-view";
+import { useDeckSync } from "@/components/use-deck-sync";
 
 function clampIndex(value: number) {
   return Math.min(Math.max(value, 0), slides.length - 1);
@@ -21,6 +22,8 @@ export function Deck({ startIndex }: { startIndex?: number }) {
   const go = useCallback((next: number) => {
     setIndex((current) => clampIndex(typeof next === "number" ? next : current));
   }, []);
+
+  useDeckSync(index, setIndex, startIndex);
 
   const next = useCallback(() => {
     setIndex((current) => clampIndex(current + 1));
@@ -205,6 +208,7 @@ export function Deck({ startIndex }: { startIndex?: number }) {
             <li>N — notas de fala</li>
             <li>F — tela cheia</li>
             <li>? — esta ajuda</li>
+            <li>/notas — celular, sincronizado</li>
           </ul>
         </aside>
       ) : null}
