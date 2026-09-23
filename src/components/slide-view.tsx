@@ -352,17 +352,21 @@ export function SlideView({ slide }: SlideViewProps) {
   return (
     <div
       className={`flex min-h-0 flex-1 flex-col justify-center ${
-        hasMedia ? "gap-10 lg:flex-row lg:items-center lg:justify-between" : ""
+        hasMedia && hasChart
+          ? "statement-split gap-8 lg:flex-row lg:items-center lg:justify-between"
+          : hasMedia
+            ? "gap-10 lg:flex-row lg:items-center lg:justify-between"
+            : ""
       }`}
     >
-      <div className="min-w-0">
+      <div className={hasMedia && hasChart ? "min-w-0 flex-1" : "min-w-0"}>
         {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
         <h1
           className={`display ${
-            hasMedia
-              ? "max-w-xl text-[clamp(2.3rem,5.8vw,5.1rem)]"
-              : hasChart
-                ? "max-w-5xl text-[clamp(2rem,4.4vw,3.6rem)]"
+            hasChart
+              ? "max-w-none text-[clamp(1.8rem,3.6vw,3.2rem)]"
+              : hasMedia
+                ? "max-w-xl text-[clamp(2.3rem,5.8vw,5.1rem)]"
                 : "max-w-5xl text-[clamp(2.8rem,7.2vw,6.4rem)]"
           }`}
         >
@@ -414,9 +418,11 @@ export function SlideView({ slide }: SlideViewProps) {
       ) : slide.figure ? (
         <div
           className={`relative shrink-0 overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10 ${
-            slide.figureWide
-              ? "w-[min(52vw,38rem)]"
-              : "w-[min(42vw,22rem)]"
+            hasChart
+              ? "w-[min(42vw,36rem)]"
+              : slide.figureWide
+                ? "w-[min(52vw,38rem)]"
+                : "w-[min(42vw,22rem)]"
           }`}
         >
           <Image

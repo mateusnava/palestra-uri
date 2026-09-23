@@ -451,6 +451,36 @@ body {
   margin: 2.6rem 0 0;
 }
 
+.statement-split .craft-shift {
+  width: min(100%, 38rem);
+  margin-top: 1.25rem;
+}
+
+.statement-split .craft-shift-head span:first-child,
+.statement-split .craft-shift-head span:last-child {
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+}
+
+.statement-split .craft-shift-before,
+.statement-split .craft-shift-after {
+  font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+}
+
+.statement-split .craft-shift-head,
+.statement-split .craft-shift li {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+}
+
+.statement-split .craft-shift li {
+  gap: 0.7rem 0.9rem;
+  padding: 0.62rem 0;
+}
+
+.statement-split .craft-shift-before,
+.statement-split .craft-shift-after {
+  min-width: 0;
+}
+
 .craft-shift-head {
   display: grid;
   grid-template-columns: 1fr auto 1fr;

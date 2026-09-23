@@ -286,13 +286,13 @@ export const slides: Slide[] = [
   {
     variant: "milestone",
     year: "2012",
-    lines: ["A Curiosity pousou", "em Marte."],
+    lines: ["O Instagram foi vendido", "por um bilhão."],
     sub: "Enquanto isso, eu comecei no Rails.",
-    figure: "/curiosity-2012.jpg",
-    figureAlt: "Rover Curiosity em Marte",
+    figure: "/instagram-2012.svg",
+    figureAlt: "Ícone do Instagram em 2012",
     figureShape: "plain",
     notes:
-      "Quebra-gelo de 2012. 6 de agosto, o rover no solo vermelho. Deixa a sala reconhecer. Aí o Rails. Não vire aula da NASA.",
+      "Quebra-gelo de 2012. 9 de abril, o anúncio de um bilhão. Deixa a sala reconhecer o ícone. Aí o Rails. Não vire aula de valuation.",
   },
   {
     variant: "columns",
@@ -322,13 +322,13 @@ export const slides: Slide[] = [
   {
     variant: "milestone",
     year: "2019",
-    lines: ["A primeira foto", "de um buraco negro."],
+    lines: ["O TikTok tomou", "o celular."],
     sub: "Enquanto isso, eu fui pra Porto Alegre — Gcom.",
-    figure: "/buraco-negro-2019.jpg",
-    figureAlt: "A primeira foto de um buraco negro",
-    figureShape: "circle",
+    figure: "/tiktok-2019.svg",
+    figureAlt: "Ícone do TikTok",
+    figureShape: "plain",
     notes:
-      "Quebra-gelo de 2019. Deixa a sala reconhecer o anel. Aí o pivot: Porto Alegre, Gcom. Não explique relatividade.",
+      "Quebra-gelo de 2019. O app virou o feed. Deixa a sala reconhecer o ícone. Aí o pivot: Porto Alegre, Gcom. Não explique o algoritmo.",
   },
   {
     variant: "columns",
@@ -476,25 +476,25 @@ export const slides: Slide[] = [
     year: "hoje",
     lines: ["O que é IA?"],
     items: [
-      "Não é um arquivo. É um palpite: qual a próxima palavra.",
-      "Tipo o autocomplete do celular — só que leu a internet.",
-      "Ela não pesquisa. Ela completa a sua frase.",
+      "Uma LLM. Um modelo treinado com muito texto.",
+      "A tarefa: dado o que já está escrito, prever o que vem depois.",
+      "Código, explicação, conversa. Tudo entra, porque tudo é texto.",
     ],
     notes:
-      "Analogia, não glossário. Autocomplete, não Wikipedia. Completar, não buscar. Sem LLM, sem token.",
+      "Uma LLM é um modelo treinado com muito texto. No treino, a tarefa é sempre a mesma: dado o que já está escrito, prever o que vem em seguida. Assim ela aprende os padrões da linguagem. Código, explicação, conversa entram juntos, porque tudo isso é texto.",
   },
   {
     variant: "list",
     year: "hoje",
     lines: ["Como funciona?"],
     items: [
-      "Parte o que você disse em pedaços — goles, não o copo.",
-      "Olha o que já veio. Chuta o que vem depois.",
-      "Uma palavra. Depois outra. Até parar.",
+      "O treino já acabou. Você escreve um pedido.",
+      "Ela lê e produz a resposta na hora, um pedaço de cada vez.",
+      "Não busca numa base. Não tem um plano escrito antes.",
     ],
-    footer: "Se inventa, é o mesmo chute. Só que errou.",
+    footer: "Erra com segurança. A continuação mais plausível nem sempre é a verdadeira.",
     notes:
-      "O loop é o ponto. Sem logits. Alucinação = o mesmo palpite, com cara de certeza.",
+      "No uso, o treino já acabou. O pedido entra, a resposta sai na hora, um pedaço de cada vez. Por isso serve para resumir, traduzir, explicar, escrever código. E por isso erra com segurança: a continuação mais plausível nem sempre é a verdadeira. Uma função que não existe saiu porque parecia a sequência certa.",
   },
   {
     variant: "milestone",
@@ -650,8 +650,11 @@ export const slides: Slide[] = [
     year: "2026",
     lines: ["A Miro é o quadro", "do mundo."],
     sub: "Mais de 100 milhões de pessoas. 250 mil empresas. Um lugar onde times pensam juntos.",
+    figure: "/miro-board.jpg",
+    figureAlt: "Um board do Miro, com um roadmap e o time na chamada",
+    figureWide: true,
     notes:
-      "O que é a casa, sem folder. Lousa, colaboração, escala. Sem valuation.",
+      "O que é a casa, sem folder. O board na tela: deixa a sala ver o quadro. Lousa, colaboração, escala. Sem valuation.",
   },
   {
     variant: "statement",
@@ -666,8 +669,11 @@ export const slides: Slide[] = [
     year: "2026",
     lines: ["A IA lê o código gigante."],
     sub: "Regras demais. O onboarding acelerou.",
+    figure: "/miro-codigo.png",
+    figureAlt: "Um cânion de código, com uma luz lendo um trecho",
+    figureWide: true,
     notes:
-      "Legado, regra, gente nova. A IA como lanterna, não como autor. Sem demo.",
+      "Legado, regra, gente nova. A luz no meio do cânion: a IA como lanterna, não como autor. Sem demo.",
   },
   {
     variant: "ai",
@@ -722,17 +728,10 @@ export const slides: Slide[] = [
     year: "hoje",
     lines: ["A mudança", "que eu vi."],
     diagram: "craft-shift",
-    notes:
-      "O quadro é a palestra em miniatura. 2006 contra hoje. Não leia as quatro. Aponta o abismo. Depois o ciclo.",
-  },
-  {
-    variant: "statement",
-    lines: ["O ciclo."],
     figure: "/ciclo-oficio-v2.png",
     figureAlt: "Ferramentas em volta; no centro, pessoas e base de conhecimento",
-    figureWide: true,
     notes:
-      "O anel muda: livro, carta, tela, editor. O centro não: gente e base. Não dê aula. Um segundo. Depois: ainda se programa.",
+      "O quadro é a palestra em miniatura. 2006 contra hoje. Não leia as quatro. Aponta o abismo. O ciclo ao lado: o anel muda, o centro não. Um segundo.",
   },
   {
     variant: "emphasis",
