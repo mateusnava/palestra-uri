@@ -42,7 +42,7 @@ export type Slide = {
   video?: string;
   gallery?: string[];
   timeline?: TimelineRow[];
-  diagram?: "ai-flow" | "dev-shift" | "acq-chain" | "craft-shift";
+  diagram?: "ai-flow" | "dev-shift" | "acq-chain" | "craft-shift" | "ux-shift";
   variant: SlideVariant;
   notes: string;
 };
@@ -744,6 +744,22 @@ export const slides: Slide[] = [
     figureAlt: "Ferramentas em volta; no centro, pessoas e base de conhecimento",
     notes:
       "O quadro é a palestra em miniatura. 2006 contra hoje. Não leia as quatro. Aponta o abismo. O ciclo ao lado: o anel muda, o centro não. Um segundo.",
+  },
+  {
+    variant: "timeline",
+    year: "hoje",
+    lines: ["Não é só técnica."],
+    diagram: "ux-shift",
+    timeline: [
+      { year: "70s", event: "Cartão. Uma resposta." },
+      { year: "80s", event: "Terminal. Digitar e esperar." },
+      { year: "90s", event: "Janelas. Mouse." },
+      { year: "Web", event: "De qualquer lugar." },
+      { year: "Mobile", event: "App limpo. No bolso." },
+      { year: "IA", event: "Linguagem natural. Voz. Fluxo por evento." },
+    ],
+    notes:
+      "A revolução não é só produzir mais. A expectativa de quem usa sobe a cada era. Não leia todas as linhas — aponta a escada. Fecha: o cliente não quer mais telas; quer outra relação.",
   },
   {
     variant: "emphasis",

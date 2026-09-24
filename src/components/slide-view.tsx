@@ -4,6 +4,7 @@ import { AcqChain } from "@/components/acq-chain";
 import { CraftShift } from "@/components/craft-shift";
 import { DevShift } from "@/components/dev-shift";
 import { DelphiWindow } from "@/components/delphi-window";
+import { UxShift } from "@/components/ux-shift";
 import type { Slide } from "@/data/slides";
 
 type SlideViewProps = {
@@ -220,28 +221,35 @@ export function SlideView({ slide }: SlideViewProps) {
 
   if (slide.variant === "timeline") {
     return (
-      <div className="flex min-h-0 flex-1 flex-col justify-between gap-10 lg:flex-row">
-        <div className="max-w-sm">
+      <div className="flex min-h-0 flex-1 flex-col justify-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+        <div className="min-w-0">
           {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
           {slide.lines.length > 0 ? (
-            <h1 className="display text-[clamp(2.4rem,5vw,4.4rem)]">{heading}</h1>
+            <h1 className="display max-w-xl text-[clamp(2.4rem,5vw,4.4rem)]">
+              {heading}
+            </h1>
           ) : null}
+          <ol className="mt-10 flex max-w-xl flex-col">
+            {slide.timeline?.map((row) => (
+              <li
+                key={`${row.year}-${row.event}`}
+                className="grid grid-cols-[5.5rem_1fr] items-baseline gap-6 border-t border-[var(--line)] py-3 first:border-t-0 first:pt-0 last:pb-0"
+              >
+                <span className="font-sans text-[0.78rem] tracking-[0.18em] text-[var(--copper)]">
+                  {row.year}
+                </span>
+                <span className="text-[clamp(1.05rem,2vw,1.35rem)] text-[var(--cream)]">
+                  {row.event}
+                </span>
+              </li>
+            ))}
+          </ol>
         </div>
-        <ol className="flex max-w-xl flex-1 flex-col justify-center">
-          {slide.timeline?.map((row) => (
-            <li
-              key={`${row.year}-${row.event}`}
-              className="grid grid-cols-[5.5rem_1fr] items-baseline gap-6 border-t border-[var(--line)] py-3 first:border-t-0 first:pt-0 last:pb-0"
-            >
-              <span className="font-sans text-[0.78rem] tracking-[0.18em] text-[var(--copper)]">
-                {row.year}
-              </span>
-              <span className="text-[clamp(1.05rem,2vw,1.35rem)] text-[var(--cream)]">
-                {row.event}
-              </span>
-            </li>
-          ))}
-        </ol>
+        {slide.diagram === "ux-shift" ? (
+          <div className="w-[min(48vw,34rem)] shrink-0">
+            <UxShift />
+          </div>
+        ) : null}
       </div>
     );
   }
