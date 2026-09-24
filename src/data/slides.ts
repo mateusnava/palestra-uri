@@ -39,6 +39,7 @@ export type Slide = {
   figureAlt?: string;
   figureShape?: "circle" | "plain";
   figureWide?: boolean;
+  video?: string;
   gallery?: string[];
   timeline?: TimelineRow[];
   diagram?: "ai-flow" | "dev-shift" | "acq-chain" | "craft-shift";
@@ -305,6 +306,17 @@ export const slides: Slide[] = [
   {
     variant: "statement",
     year: "2012",
+    lines: ["A viagem.", "Os amigos."],
+    sub: "O click.",
+    figure: "/rs-on-rails.jpg",
+    figureAlt: "Com amigos em um evento de tecnologia",
+    figureWide: true,
+    notes:
+      "A foto é de outro evento — não achei do RS On Rails. Vale igual: viagem, amigos, o click. Um segundo. Sem narrar quem é quem. Sem confessar no palco se não quiser.",
+  },
+  {
+    variant: "statement",
+    year: "2012",
     lines: ["Abri minha primeira empresa.", "Inocode."],
     sub: "Outsourcing, ainda no Rails. Muitos projetos, muitas conexões. Aprendi demais. Foi um ótimo tempo.",
     notes:
@@ -428,6 +440,15 @@ export const slides: Slide[] = [
     figureWide: true,
     notes:
       "O escritório vira arquibancada. A rede que ficou. Sem discurso de networking.",
+  },
+  {
+    variant: "statement",
+    year: "2021",
+    lines: ["Seja uma boa pessoa."],
+    sub: "O Conrad falou isso.",
+    video: "-Vl3QxvFc9Y",
+    notes:
+      "O Conrad, amigo. Deixa o vídeo rodar. Não fale por cima. Quando acabar, segue: tech lead foi comunicação.",
   },
   {
     variant: "columns",
@@ -748,6 +769,21 @@ export const slides: Slide[] = [
     ],
     notes:
       "O fecho. Duas colunas. Sem terceira. Sem “façam como eu”. Agradeça e cale.",
+  },
+  {
+    variant: "statement",
+    year: "hoje",
+    lines: ["A primeira coisa que pensamos:", "vou produzir mais."],
+    sub: "Mais telas. Mais funcionalidades.",
+    notes:
+      "A armadilha óbvia. Produtividade do programador. Um segundo. Não cite ferramentas. A virada vem no próximo.",
+  },
+  {
+    variant: "emphasis",
+    lines: ["Mas o cliente não espera", "mais telas."],
+    sub: "Espera outra relação com o software — linguagem natural, voz, um fluxo disparado por um evento.",
+    notes:
+      "Insight do amigo. Expectativa mudou, não só a ferramenta. WhatsApp, e-mail, voz — sem tela. Agradeça se quiser. Fecha e vai pro Obrigado.",
   },
   {
     variant: "close",

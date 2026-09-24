@@ -346,7 +346,7 @@ export function SlideView({ slide }: SlideViewProps) {
     );
   }
 
-  const hasMedia = Boolean(slide.gallery || slide.figure);
+  const hasMedia = Boolean(slide.gallery || slide.figure || slide.video);
   const hasChart = slide.diagram === "craft-shift";
 
   return (
@@ -414,6 +414,20 @@ export function SlideView({ slide }: SlideViewProps) {
               />
             </div>
           ))}
+        </div>
+      ) : slide.video ? (
+        <div
+          className="relative aspect-[9/16] h-[min(72vh,36rem)] shrink-0 overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <iframe
+            className="absolute inset-0 h-full w-full"
+            src={`https://www.youtube-nocookie.com/embed/${slide.video}?rel=0`}
+            title="Vídeo do Conrad sobre ser uma boa pessoa"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
         </div>
       ) : slide.figure ? (
         <div
