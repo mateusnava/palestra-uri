@@ -275,15 +275,6 @@ export const slides: Slide[] = [
       "Produto grande, legado, marca. Um caos para outro. Aí a escala: aeroporto, nomes novos, projeto gigante. Não transforme em tour de consultoria.",
   },
   {
-    variant: "emphasis",
-    lines: ["A vida é muito mais", "que o trabalho."],
-    sub: "Nesse projeto eu trabalhei demais. Hora extra, noites em claro. Não vale a pena. Vestir a camiseta é fazer o que tem que ser feito — no horário.",
-    figure: "/horario-ponto.png",
-    figureAlt: "Relógio de ponto às 18h",
-    notes:
-      "A Vivo cobrou o corpo. Camiseta não é hora extra. Primeira pessoa, sem sermão. Fecha e segue.",
-  },
-  {
     variant: "milestone",
     year: "2012",
     lines: ["O Instagram foi vendido", "por um bilhão."],
