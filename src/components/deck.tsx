@@ -11,7 +11,13 @@ function clampIndex(value: number) {
   return Math.min(Math.max(value, 0), slides.length - 1);
 }
 
-export function Deck({ startIndex }: { startIndex?: number }) {
+export function Deck({
+  startIndex,
+  syncEnabled = false,
+}: {
+  startIndex?: number;
+  syncEnabled?: boolean;
+}) {
   const [index, setIndex] = useState(() =>
     startIndex != null ? clampIndex(startIndex) : 0,
   );
@@ -23,7 +29,7 @@ export function Deck({ startIndex }: { startIndex?: number }) {
     setIndex((current) => clampIndex(typeof next === "number" ? next : current));
   }, []);
 
-  useDeckSync(index, setIndex, startIndex);
+  useDeckSync(index, setIndex, startIndex, syncEnabled);
 
   const next = useCallback(() => {
     setIndex((current) => clampIndex(current + 1));
@@ -208,7 +214,7 @@ export function Deck({ startIndex }: { startIndex?: number }) {
             <li>N — notas de fala</li>
             <li>F — tela cheia</li>
             <li>? — esta ajuda</li>
-            <li>/notas — celular, sincronizado</li>
+            <li>/notas?sync=true — celular, sincronizado</li>
           </ul>
         </aside>
       ) : null}

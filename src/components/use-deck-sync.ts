@@ -6,12 +6,15 @@ export function useDeckSync(
   index: number,
   setIndex: Dispatch<SetStateAction<number>>,
   leadIndex?: number,
+  enabled = false,
 ) {
   const ready = useRef(false);
   const remote = useRef(false);
   const lead = useRef(leadIndex);
 
   useEffect(() => {
+    if (!enabled) return;
+
     let cancelled = false;
 
     const apply = (incoming: number) => {
@@ -55,9 +58,10 @@ export function useDeckSync(
       window.clearInterval(poll);
       source.close();
     };
-  }, [setIndex]);
+  }, [enabled, setIndex]);
 
   useEffect(() => {
+    if (!enabled) return;
     if (!ready.current) return;
     if (remote.current) {
       remote.current = false;
@@ -69,5 +73,5 @@ export function useDeckSync(
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ index }),
     });
-  }, [index]);
+  }, [enabled, index]);
 }

@@ -8,9 +8,9 @@ function clampIndex(value: number) {
   return Math.min(Math.max(value, 0), slides.length - 1);
 }
 
-export function Presenter() {
+export function Presenter({ syncEnabled = false }: { syncEnabled?: boolean }) {
   const [index, setIndex] = useState(0);
-  useDeckSync(index, setIndex);
+  useDeckSync(index, setIndex, undefined, syncEnabled);
 
   const slide = slides[index];
   const upcoming = slides[index + 1];
