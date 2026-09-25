@@ -323,6 +323,51 @@ export const slides: Slide[] = [
       "Ainda na paixão do Rails. Primeira empresa, não pitch. Outsourcing como escola: projetos diferentes, gente, conexão. Fecha com carinho.",
   },
   {
+    variant: "statement",
+    year: "2016",
+    lines: ["Aqila."],
+    sub: "Agricultura. O Brasil inteiro.",
+    figure: "/brasil.svg",
+    figureAlt: "Mapa do Brasil",
+    figureWide: true,
+    notes:
+      "O mapa é o alcance. Produto de campo, país inteiro. Sem logo da Agro1. Sem feature. O hectare vem depois.",
+  },
+  {
+    variant: "statement",
+    year: "2016",
+    lines: ["No campo."],
+    sub: "Em seis meses, já era teste.",
+    gallery: ["/aqila-campo-celular.jpg", "/aqila-campo-solo.jpg"],
+    notes:
+      "Junho e outubro de 2016. Deixa a sala ver a terra, o celular, o solo. Não nomeie quem é quem. Seis meses até o teste — velocidade sem virar sprint review.",
+  },
+  {
+    variant: "statement",
+    year: "2016",
+    lines: ["Pegava o feedback.", "Mudava."],
+    sub: "De novo. Até fazer sentido para quem usava.",
+    notes:
+      "O ciclo é o ofício. Ecoa a abertura: produto que faz sentido para quem usa. Sem método ágil. Sem retrospectiva.",
+  },
+  {
+    variant: "columns",
+    year: "2016",
+    lines: ["Montei o time.", "1 milhão de hectares."],
+    columns: [
+      {
+        lines: ["Montei o time."],
+        sub: "Amigos. Gente com quem dava para construir.",
+      },
+      {
+        lines: ["1 milhão", "de hectares."],
+        sub: "Do zero até o campo sentir.",
+      },
+    ],
+    notes:
+      "A primeira vez que você monta o grupo, não só entra. O número é escala, não troféu. Um segundo. Sem org chart.",
+  },
+  {
     variant: "milestone",
     year: "2019",
     lines: ["O TikTok tomou", "o celular."],

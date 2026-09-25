@@ -400,8 +400,10 @@ export function SlideView({ slide }: SlideViewProps) {
       {slide.gallery ? (
         <div
           className={`grid shrink-0 gap-2.5 ${
-            slide.gallery.length <= 4
-              ? "w-[min(48vw,28rem)] grid-cols-2"
+            slide.gallery.length === 2
+              ? "w-[min(52vw,40rem)] grid-cols-2"
+              : slide.gallery.length <= 4
+                ? "w-[min(48vw,28rem)] grid-cols-2"
               : slide.gallery.length >= 7
                 ? "w-[min(56vw,34rem)] grid-cols-4"
                 : "w-[min(52vw,26rem)] grid-cols-3"
