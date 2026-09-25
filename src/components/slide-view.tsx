@@ -448,7 +448,7 @@ export function SlideView({ slide }: SlideViewProps) {
           className={`relative shrink-0 ${
             slide.figureShape === "plain"
               ? slide.figure === "/inocode-logo.png"
-                ? "w-[min(28vw,18rem)]"
+                ? "w-[min(16vw,11rem)]"
                 : "w-[min(46vw,32rem)]"
               : `overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10 ${
                   hasChart
