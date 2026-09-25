@@ -797,7 +797,7 @@ export const slides: Slide[] = [
   {
     variant: "timeline",
     year: "hoje",
-    lines: ["Não é só técnica."],
+    lines: ["Mudança: não é só técnica, é também expectativa."],
     diagram: "ux-shift",
     timeline: [
       { year: "70s", event: "Cartão. Uma resposta." },
@@ -834,21 +834,6 @@ export const slides: Slide[] = [
     ],
     notes:
       "O fecho. Duas colunas. Sem terceira. Sem “façam como eu”. Agradeça e cale.",
-  },
-  {
-    variant: "statement",
-    year: "hoje",
-    lines: ["A primeira coisa que pensamos:", "vou produzir mais."],
-    sub: "Mais telas. Mais funcionalidades.",
-    notes:
-      "A armadilha óbvia. Produtividade do programador. Um segundo. Não cite ferramentas. A virada vem no próximo.",
-  },
-  {
-    variant: "emphasis",
-    lines: ["Mas o cliente não espera", "mais telas."],
-    sub: "Espera outra relação com o software — linguagem natural, voz, um fluxo disparado por um evento.",
-    notes:
-      "Insight do amigo. Expectativa mudou, não só a ferramenta. WhatsApp, e-mail, voz — sem tela. Agradeça se quiser. Fecha e vai pro Obrigado.",
   },
   {
     variant: "close",
