@@ -39,6 +39,7 @@ export type Slide = {
   figureAlt?: string;
   figureShape?: "circle" | "plain";
   figureWide?: boolean;
+  galleryWide?: boolean;
   video?: string;
   gallery?: string[];
   timeline?: TimelineRow[];
@@ -326,29 +327,27 @@ export const slides: Slide[] = [
     variant: "statement",
     year: "2016",
     lines: ["Aqila."],
-    sub: "Agricultura. O Brasil inteiro.",
-    figure: "/brasil.svg",
-    figureAlt: "Mapa do Brasil",
-    figureWide: true,
+    sub: "Saí da Inocode. Fui trabalhar num cliente.",
+    figure: "/aqila-app.png",
+    figureAlt: "Dois celulares com o Aqila aberto no talhão",
+    figureShape: "plain",
     notes:
-      "O mapa é o alcance. Produto de campo, país inteiro. Sem logo da Agro1. Sem feature. O hectare vem depois.",
+      "A ponte. Você largou a empresa que abriu e entrou no cliente. O app na tela é o produto. Sem tour de feature. O hectare vem depois.",
   },
   {
     variant: "statement",
     year: "2016",
     lines: ["No campo."],
-    sub: "Em seis meses, já era teste.",
-    gallery: ["/aqila-campo-celular.jpg", "/aqila-campo-solo.jpg"],
+    sub: "Teste desde o começo. Com quem usa, no ambiente de quem usa.",
+    gallery: [
+      "/aqila-campo-celular.jpg",
+      "/aqila-campo-solo.jpg",
+      "/aqila-sala.jpg",
+      "/aqila-talhao.jpg",
+    ],
+    galleryWide: true,
     notes:
-      "Junho e outubro de 2016. Deixa a sala ver a terra, o celular, o solo. Não nomeie quem é quem. Seis meses até o teste — velocidade sem virar sprint review.",
-  },
-  {
-    variant: "statement",
-    year: "2016",
-    lines: ["Pegava o feedback.", "Mudava."],
-    sub: "De novo. Até fazer sentido para quem usava.",
-    notes:
-      "O ciclo é o ofício. Ecoa a abertura: produto que faz sentido para quem usa. Sem método ágil. Sem retrospectiva.",
+      "Celular, solo, a sala, o talhão. Deixa a sala ver. Não nomeie quem é quem. Não explique o pôster. O teste nasceu no campo, com a pessoa, no lugar dela.",
   },
   {
     variant: "columns",
@@ -357,15 +356,15 @@ export const slides: Slide[] = [
     columns: [
       {
         lines: ["Montei o time."],
-        sub: "Amigos. Gente com quem dava para construir.",
+        sub: "Bons amigos. Boas relações. De novo, as pessoas.",
       },
       {
         lines: ["1 milhão", "de hectares."],
-        sub: "Do zero até o campo sentir.",
+        sub: "Tempo recorde. Qualidade alta. No começo, era sonho.",
       },
     ],
     notes:
-      "A primeira vez que você monta o grupo, não só entra. O número é escala, não troféu. Um segundo. Sem org chart.",
+      "A primeira vez que você monta o grupo, não só entra. Pessoas, amigos, relação — o mesmo fio da palestra, sem sermão. O milhão é a marca que era sonho, feita rápido e com qualidade. Sem org chart. Sem troféu.",
   },
   {
     variant: "milestone",

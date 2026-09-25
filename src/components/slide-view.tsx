@@ -400,10 +400,12 @@ export function SlideView({ slide }: SlideViewProps) {
       {slide.gallery ? (
         <div
           className={`grid shrink-0 gap-2.5 ${
-            slide.gallery.length === 2
-              ? "w-[min(52vw,40rem)] grid-cols-2"
-              : slide.gallery.length <= 4
-                ? "w-[min(48vw,28rem)] grid-cols-2"
+            slide.galleryWide
+              ? "w-[min(52vw,38rem)] grid-cols-2"
+              : slide.gallery.length === 2
+                ? "w-[min(52vw,40rem)] grid-cols-2"
+                : slide.gallery.length <= 4
+                  ? "w-[min(48vw,28rem)] grid-cols-2"
               : slide.gallery.length >= 7
                 ? "w-[min(56vw,34rem)] grid-cols-4"
                 : "w-[min(52vw,26rem)] grid-cols-3"
@@ -412,7 +414,9 @@ export function SlideView({ slide }: SlideViewProps) {
           {slide.gallery.map((src) => (
             <div
               key={src}
-              className="relative aspect-[3/4] overflow-hidden rounded-sm shadow-[0_10px_24px_rgba(0,0,0,0.4)] ring-1 ring-white/10"
+              className={`relative overflow-hidden rounded-sm shadow-[0_10px_24px_rgba(0,0,0,0.4)] ring-1 ring-white/10 ${
+                slide.galleryWide ? "aspect-[4/3]" : "aspect-[3/4]"
+              }`}
             >
               <Image
                 src={src}
@@ -441,12 +445,16 @@ export function SlideView({ slide }: SlideViewProps) {
         </div>
       ) : slide.figure ? (
         <div
-          className={`relative shrink-0 overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10 ${
-            hasChart
-              ? "w-[min(42vw,36rem)]"
-              : slide.figureWide
-                ? "w-[min(52vw,38rem)]"
-                : "w-[min(42vw,22rem)]"
+          className={`relative shrink-0 ${
+            slide.figureShape === "plain"
+              ? "w-[min(46vw,32rem)]"
+              : `overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10 ${
+                  hasChart
+                    ? "w-[min(42vw,36rem)]"
+                    : slide.figureWide
+                      ? "w-[min(52vw,38rem)]"
+                      : "w-[min(42vw,22rem)]"
+                }`
           }`}
         >
           <Image
