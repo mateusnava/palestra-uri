@@ -37,6 +37,7 @@ export type Slide = {
   imageOverlay?: string;
   figure?: string;
   figureAlt?: string;
+  figureCaption?: string;
   figureShape?: "circle" | "plain";
   figureWide?: boolean;
   galleryWide?: boolean;
@@ -318,8 +319,12 @@ export const slides: Slide[] = [
   {
     variant: "statement",
     year: "2012",
-    lines: ["Abri minha primeira empresa.", "Inocode."],
+    lines: ["Abri minha primeira empresa."],
     sub: "Outsourcing, ainda no Rails. Muitos projetos, muitas conexões. Aprendi demais. Foi um ótimo tempo.",
+    figure: "/inocode-logo.png",
+    figureAlt: "Logo da Inocode",
+    figureCaption: "Inocode",
+    figureShape: "plain",
     notes:
       "Ainda na paixão do Rails. Primeira empresa, não pitch. Outsourcing como escola: projetos diferentes, gente, conexão. Fecha com carinho.",
   },
@@ -490,7 +495,7 @@ export const slides: Slide[] = [
     year: "2021",
     lines: ["Seja uma boa pessoa."],
     sub: "O Conrad falou isso.",
-    video: "-Vl3QxvFc9Y",
+    video: "/conrad_legendado.mp4",
     notes:
       "O Conrad, amigo. Deixa o vídeo rodar. Não fale por cima. Quando acabar, segue: tech lead foi comunicação.",
   },
