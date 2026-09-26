@@ -83,6 +83,7 @@ Não é um currículo narrado ano a ano. Cada época entra para mostrar **uma mu
 - Startups de SF: ritmo, duas vendas (Cursor, Miro), Miro hoje.
 - “Qual linguagem eu uso? Não importa muito.”
 - IA como revolução do pensar e do construir. Somos mais arquitetos — **e ainda somos quem escreve, revisa e responde pelo software**.
+- Saber o que está sendo feito. Gerar não basta: o ofício ainda é entender, revisar e responder.
 - Ser uma pessoa legal. Stacks vêm e vão. Relação fica.
 
 ## O que não pode aparecer

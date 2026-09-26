@@ -78,11 +78,12 @@ export const slides: Slide[] = [
     kicker: "Hoje",
     lines: ["Objetivos", "nessa palestra"],
     items: [
-      "Entender que a IA mudou radicalmente como se constrói software.",
+      "Entender as mudanças que a IA causou.",
+      "Saber o que está sendo feito.",
       "Ser uma pessoa legal.",
     ],
     notes:
-      "Objetivos da palestra, não da vida. Dois só. O primeiro é o ofício. O segundo é o caráter. Pessoa legal é o ponto. Desembala: parceiro, se importar, relações. Sem sermão. Segue a agenda.",
+      "Objetivos da palestra, não da vida. Três. O primeiro é o ofício: o quanto a IA mudou o jeito de construir. O segundo é o julgamento: gerar não basta, ainda precisamos saber o que está sendo feito. O terceiro é o caráter. Pessoa legal é o ponto. Desembala: parceiro, se importar, relações. Sem sermão. Segue a agenda.",
   },
   {
     variant: "list",
