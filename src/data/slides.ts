@@ -621,6 +621,13 @@ export const slides: Slide[] = [
       "O click depois do Copilot. Não era mais autocomplete. Era código que servia. Sem demo.",
   },
   {
+    variant: "emphasis",
+    lines: ["Mas precisa saber", "o que está", "sendo escrito."],
+    sub: "Ser crítico. Ter o conhecimento para criticar o código.",
+    notes:
+      "A qualidade não te dispensa. Você lê o que saiu. Criticar exige base. Sem sermão. Depois: entregar rápido.",
+  },
+  {
     variant: "statement",
     year: "2024",
     lines: ["A regra era", "entregar. Rápido."],
