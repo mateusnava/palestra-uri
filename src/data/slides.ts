@@ -452,6 +452,12 @@ export const slides: Slide[] = [
       "O João. Deixa o vídeo rodar. Não fale por cima. A graduação como rede, não só diploma.",
   },
   {
+    variant: "emphasis",
+    lines: ["Ok.", "Mas e a parte de IA", "dessa palestra?"],
+    notes:
+      "Quebra a quarta parede. A sala já quer a IA. Deixa rir. Não responda. A história segue — a IA chega, mas ainda não.",
+  },
+  {
     variant: "milestone",
     year: "2021",
     lines: ["A vacinação da covid", "começou."],
