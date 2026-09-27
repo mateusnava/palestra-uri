@@ -515,7 +515,7 @@ export const slides: Slide[] = [
     columns: [
       {
         lines: ["Virei tech lead."],
-        sub: "O motivo: comunicação excelente.",
+        sub: "O motivo: comunicação.",
       },
       {
         lines: ["Codei muito", "em Rails."],
@@ -539,7 +539,7 @@ export const slides: Slide[] = [
     lines: ["Mas isso era", "só o começo."],
     sub: "Muita coisa estava por vir.",
     notes:
-      "O divisor. Daqui: o que é e como funciona. Depois a história segue em 2024.",
+      "O divisor. Daqui: o que o modelo é, e o harness em volta. Depois a história segue em 2024.",
   },
   {
     variant: "list",
@@ -551,20 +551,22 @@ export const slides: Slide[] = [
       "Código, explicação, conversa. Tudo entra, porque tudo é texto.",
     ],
     notes:
-      "Uma LLM é um modelo treinado com muito texto. No treino, a tarefa é sempre a mesma: dado o que já está escrito, prever o que vem em seguida. Assim ela aprende os padrões da linguagem. Código, explicação, conversa entram juntos, porque tudo isso é texto.",
+      "Uma LLM é um modelo treinado com muito texto. No treino, a tarefa é sempre a mesma: dado o que já está escrito, prever o que vem em seguida. Código, explicação, conversa entram juntos, porque tudo isso é texto. No uso, o treino já acabou. A resposta sai na hora, um pedaço de cada vez. Não busca numa base. Não tem um plano escrito antes. A continuação mais plausível nem sempre é a verdadeira. Uma função que não existe saiu porque parecia a sequência certa. O Copilot era isso, dentro do editor. O que veio depois está no próximo slide.",
   },
   {
     variant: "list",
     year: "hoje",
-    lines: ["Como funciona?"],
+    lines: ["O harness"],
+    sub: "No Cursor, no Codex, no Claude Code.\nO sistema em volta do modelo.",
     items: [
-      "O treino já acabou. Você escreve um pedido.",
-      "Ela lê e produz a resposta na hora, um pedaço de cada vez.",
-      "Não busca numa base. Não tem um plano escrito antes.",
+      "Contexto — o que ela sabe",
+      "Capacidades — o que ela chama",
+      "Controle — o que valida",
+      "Execução — onde ela age",
     ],
-    footer: "Erra com segurança. A continuação mais plausível nem sempre é a verdadeira.",
+    footer: "O contexto guia os outros três.",
     notes:
-      "No uso, o treino já acabou. O pedido entra, a resposta sai na hora, um pedaço de cada vez. Por isso serve para resumir, traduzir, explicar, escrever código. E por isso erra com segurança: a continuação mais plausível nem sempre é a verdadeira. Uma função que não existe saiu porque parecia a sequência certa.",
+      "O Copilot era o modelo. Cursor, Codex e Claude Code são o harness: o sistema em volta. Contexto: código, regra de negócio, onde cada artefato mora. Capacidades: skill, ferramenta, API — o que ela pode chamar. Controle: teste, validação, regra. Execução: o ambiente onde ela age e vê o que aconteceu. Sem contexto, as outras três agem no escuro. O Cursor volta na história. A lista fecha no fim.",
   },
   {
     variant: "milestone",

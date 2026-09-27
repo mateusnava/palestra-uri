@@ -194,6 +194,11 @@ export function SlideView({ slide }: SlideViewProps) {
         <div className="max-w-xl">
           {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
           <h1 className="display text-[clamp(2.1rem,4.6vw,4rem)]">{heading}</h1>
+          {slide.sub ? (
+            <p className="mt-8 max-w-md whitespace-pre-line text-[clamp(1.15rem,2.1vw,1.45rem)] leading-snug text-[var(--muted)]">
+              {slide.sub}
+            </p>
+          ) : null}
         </div>
         <div className="max-w-lg flex-1">
           {slide.items ? (
