@@ -532,6 +532,14 @@ export const slides: Slide[] = [
       "Não foi o Rails. Foi falar, escrever, alinhar. Fecha o inglês sem apontar o dedo. A paixão de 2012 ainda estava viva. Pessoas e casa, se couber na fala. Sem folder.",
   },
   {
+    variant: "emphasis",
+    lines: ["Finalmente.", "Vamos falar", "de IA."],
+    figure: "/robo-ia.svg",
+    figureAlt: "Um robô acenando",
+    notes:
+      "O alívio. O robô chega. Deixa rir. Não explique. O próximo slide é o Copilot.",
+  },
+  {
     variant: "statement",
     year: "2021",
     lines: ["GitHub Copilot."],
