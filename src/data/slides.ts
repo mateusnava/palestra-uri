@@ -443,6 +443,15 @@ export const slides: Slide[] = [
       "Amizade e carreira. Sem pandemia. Sem aula de networking.",
   },
   {
+    variant: "statement",
+    year: "2019",
+    lines: ["A graduação", "gera conexões."],
+    sub: "O João falou isso.",
+    video: "/joao.mp4",
+    notes:
+      "O João. Deixa o vídeo rodar. Não fale por cima. A graduação como rede, não só diploma.",
+  },
+  {
     variant: "milestone",
     year: "2021",
     lines: ["A vacinação da covid", "começou."],
