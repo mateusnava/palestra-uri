@@ -439,13 +439,17 @@ export function SlideView({ slide }: SlideViewProps) {
         </div>
       ) : slide.video ? (
         <div
-          className="relative aspect-[9/16] h-[min(72vh,36rem)] shrink-0 overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
+          className={`relative shrink-0 overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10 ${
+            slide.figureWide
+              ? "aspect-[1280/802] h-[min(62vh,34rem)]"
+              : "aspect-[9/16] h-[min(72vh,36rem)]"
+          }`}
           onClick={(event) => event.stopPropagation()}
         >
           <video
             className="absolute inset-0 h-full w-full object-contain"
             src={slide.video}
-            title="Vídeo do Conrad sobre ser uma boa pessoa"
+            title={slide.lines.join(" ")}
             controls
             playsInline
             preload="metadata"

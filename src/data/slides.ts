@@ -868,6 +868,14 @@ export const slides: Slide[] = [
       "O fecho. Duas colunas. Sem terceira. Sem “façam como eu”. Agradeça e cale.",
   },
   {
+    variant: "statement",
+    year: "hoje",
+    lines: ["Código ao vivo."],
+    video: "/final.mp4",
+    figureWide: true,
+    notes: "Deixa o vídeo rodar. Não fale por cima. Quando acabar, agradece.",
+  },
+  {
     variant: "close",
     lines: ["Obrigado."],
     sub: "Perguntas?",
