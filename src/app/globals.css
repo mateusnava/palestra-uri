@@ -246,6 +246,71 @@ body {
   color: var(--sand);
 }
 
+.question-field {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: min(48vw, 30rem);
+  flex-shrink: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.125rem;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(212, 120, 60, 0.12), transparent 62%),
+    radial-gradient(ellipse 55% 45% at 20% 20%, rgba(42, 111, 163, 0.14), transparent 55%),
+    rgba(255, 255, 255, 0.02);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.question-field__mark {
+  position: absolute;
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-weight: 400;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: question-rise 5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  pointer-events: none;
+}
+
+.question-field__mark--copper {
+  color: var(--copper);
+  text-shadow: 0 0 28px rgba(212, 120, 60, 0.35);
+}
+
+.question-field__mark--sand {
+  color: var(--sand);
+  text-shadow: 0 0 24px rgba(228, 210, 176, 0.25);
+}
+
+.question-field__mark--muted {
+  color: var(--muted);
+}
+
+@keyframes question-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.92);
+  }
+  12% {
+    opacity: 0.92;
+    transform: translateY(0) scale(1);
+  }
+  28% {
+    opacity: 0.85;
+    transform: translateY(-10px) scale(1);
+  }
+  42% {
+    opacity: 0;
+    transform: translateY(-22px) scale(0.96);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-22px) scale(0.96);
+  }
+}
+
 .ai-flow {
   margin: 3.5rem 0 0;
 }
@@ -1033,6 +1098,12 @@ body {
   .deck .mt-16 {
     animation: none;
     transition: none;
+  }
+
+  .question-field__mark {
+    animation: none;
+    opacity: 0.55;
+    transform: translateY(0);
   }
 
   .era-timeline__fill {

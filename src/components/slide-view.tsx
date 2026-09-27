@@ -5,6 +5,7 @@ import { CraftShift } from "@/components/craft-shift";
 import { DevShift } from "@/components/dev-shift";
 import { DelphiWindow } from "@/components/delphi-window";
 import { UxShift } from "@/components/ux-shift";
+import { QuestionField } from "@/components/question-field";
 import type { Slide } from "@/data/slides";
 
 type SlideViewProps = {
@@ -354,7 +355,9 @@ export function SlideView({ slide }: SlideViewProps) {
               className="object-cover object-[center_70%]"
             />
           </div>
-        ) : null}
+        ) : (
+          <QuestionField />
+        )}
       </div>
     );
   }
