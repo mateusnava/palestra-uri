@@ -505,7 +505,7 @@ export const slides: Slide[] = [
     variant: "statement",
     year: "2021",
     lines: ["Amizades."],
-    sub: "A SimplePractice me deu. Uma conexão entre o Brasil e os EUA.",
+    sub: "A SimplePractice estabeleceu uma amizade. Conexão Brasil <-> EUA",
     gallery: [
       "/simplepractice-amigos.jpg",
       "/amizade-farol.jpg",
