@@ -455,7 +455,7 @@ export function SlideView({ slide }: SlideViewProps) {
                   ? "w-[min(48vw,28rem)] grid-cols-2"
               : slide.gallery.length >= 7
                 ? "w-[min(56vw,34rem)] grid-cols-4"
-                : "w-[min(52vw,26rem)] grid-cols-3"
+                : "w-[min(56vw,46rem,78vh)] grid-cols-3"
           }`}
         >
           {slide.gallery.map((src) => (
