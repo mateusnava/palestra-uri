@@ -37,6 +37,7 @@ body {
 .deck {
   background: var(--ink);
   color: var(--cream);
+  touch-action: pan-y;
   transition:
     background-color 420ms ease,
     color 420ms ease;

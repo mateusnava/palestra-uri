@@ -1,11 +1,17 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { slides } from "@/data/slides";
 import { EraTimeline } from "@/components/era-timeline";
 import { SlideView } from "@/components/slide-view";
 import { useDeckSync } from "@/components/use-deck-sync";
+import {
+  createDeckPointer,
+  pointerClick,
+  pointerEnd,
+  pointerStart,
+} from "@/lib/deck-gesture";
 
 function clampIndex(value: number) {
   return Math.min(Math.max(value, 0), slides.length - 1);
@@ -23,7 +29,7 @@ export function Deck({
   );
   const [notesOpen, setNotesOpen] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
-  const [touchX, setTouchX] = useState<number | null>(null);
+  const pointer = useRef(createDeckPointer());
 
   const go = useCallback((next: number) => {
     setIndex((current) => clampIndex(typeof next === "number" ? next : current));
@@ -131,19 +137,26 @@ export function Deck({
       onClick={(event) => {
         const rect = event.currentTarget.getBoundingClientRect();
         const x = event.clientX - rect.left;
-        if (x < rect.width * 0.28) prev();
-        else next();
+        const result = pointerClick(pointer.current, x, rect.width);
+        pointer.current = result.pointer;
+        if (result.nav === "prev") prev();
+        else if (result.nav === "next") next();
       }}
-      onTouchStart={(event) => setTouchX(event.changedTouches[0]?.clientX ?? null)}
+      onTouchStart={(event) => {
+        const x = event.changedTouches[0]?.clientX;
+        if (x == null) return;
+        pointer.current = pointerStart(pointer.current, x);
+      }}
       onTouchEnd={(event) => {
-        const end = event.changedTouches[0]?.clientX;
-        if (touchX == null || end == null) return;
-        const delta = end - touchX;
-        if (Math.abs(delta) > 48) {
-          if (delta < 0) next();
-          else prev();
-        }
-        setTouchX(null);
+        const x = event.changedTouches[0]?.clientX;
+        if (x == null) return;
+        const result = pointerEnd(pointer.current, x);
+        pointer.current = result.pointer;
+        if (result.nav === "prev") prev();
+        else if (result.nav === "next") next();
+      }}
+      onTouchCancel={() => {
+        pointer.current = createDeckPointer();
       }}
     >
       <div className="grain" aria-hidden />
