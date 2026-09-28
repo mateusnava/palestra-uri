@@ -92,11 +92,11 @@ export function Deck({
         return;
       }
 
-      if (["ArrowRight", "PageDown", " ", "j"].includes(event.key)) {
+      if (["ArrowRight", "ArrowDown", "PageDown", " ", "j"].includes(event.key)) {
         event.preventDefault();
         next();
       }
-      if (["ArrowLeft", "PageUp", "Backspace", "k"].includes(event.key)) {
+      if (["ArrowLeft", "ArrowUp", "PageUp", "Backspace", "k"].includes(event.key)) {
         event.preventDefault();
         prev();
       }
@@ -223,7 +223,7 @@ export function Deck({
             Atalhos
           </p>
           <ul className="grid max-w-xl gap-2 text-[0.95rem] text-[var(--cream)] sm:grid-cols-2">
-            <li>← → espaço — avançar</li>
+            <li>← ↑ / → ↓ espaço — voltar / avançar</li>
             <li>N — notas de fala</li>
             <li>F — tela cheia</li>
             <li>? — esta ajuda</li>
