@@ -362,6 +362,36 @@ export function SlideView({ slide }: SlideViewProps) {
     );
   }
 
+  if (slide.videos?.length) {
+    return (
+      <div className="flex min-h-0 flex-1 flex-col justify-center gap-6">
+        <h1 className="display text-[clamp(2rem,4vw,3.6rem)]">{heading}</h1>
+        <div
+          className="grid min-h-0 grid-cols-2 gap-6 lg:gap-10"
+          onClick={(event) => event.stopPropagation()}
+        >
+          {slide.videos.map((clip) => (
+            <figure key={clip.src} className="min-w-0">
+              <figcaption className="mb-3 text-[clamp(0.85rem,1.35vw,1.15rem)] leading-snug text-[var(--muted)]">
+                {clip.label}
+              </figcaption>
+              <div className="relative aspect-[16/10] overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10">
+                <video
+                  className="absolute inset-0 h-full w-full bg-black object-contain"
+                  src={clip.src}
+                  title={clip.label}
+                  controls
+                  playsInline
+                  preload="metadata"
+                />
+              </div>
+            </figure>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   const hasMedia = Boolean(slide.gallery || slide.figure || slide.video);
   const hasChart = slide.diagram === "craft-shift";
 

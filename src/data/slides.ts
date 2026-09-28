@@ -23,6 +23,11 @@ export type SlideColumn = {
   footer?: string;
 };
 
+export type SlideVideo = {
+  src: string;
+  label: string;
+};
+
 export type Slide = {
   year?: string;
   kicker?: string;
@@ -42,6 +47,7 @@ export type Slide = {
   figureWide?: boolean;
   galleryWide?: boolean;
   video?: string;
+  videos?: SlideVideo[];
   gallery?: string[];
   timeline?: TimelineRow[];
   diagram?: "ai-flow" | "dev-shift" | "acq-chain" | "craft-shift" | "ux-shift";
@@ -881,9 +887,18 @@ export const slides: Slide[] = [
     variant: "statement",
     year: "hoje",
     lines: ["Código ao vivo."],
-    video: "/final.mp4",
-    figureWide: true,
-    notes: "Deixa o vídeo rodar. Não fale por cima. Quando acabar, agradece.",
+    videos: [
+      {
+        src: "/final.mp4",
+        label: "Uma funcionalidade. A importância de planejar.",
+      },
+      {
+        src: "/miro-example.mp4",
+        label: "Investigando bug.",
+      },
+    ],
+    notes:
+      "Duas colunas. Primeiro, planejar uma funcionalidade. Depois, investigar um bug no Miro. Deixa rodar. Não fale por cima.",
   },
   {
     variant: "close",
