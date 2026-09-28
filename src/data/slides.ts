@@ -505,11 +505,17 @@ export const slides: Slide[] = [
     variant: "statement",
     year: "2021",
     lines: ["Amizades."],
-    figure: "/simplepractice-amigos.jpg",
-    figureAlt: "Amigos da SimplePractice",
-    figureWide: true,
+    sub: "A SimplePractice me deu. Uma conexão entre o Brasil e os EUA.",
+    gallery: [
+      "/simplepractice-amigos.jpg",
+      "/amizade-farol.jpg",
+      "/amizade-caldo.jpg",
+      "/amizade-praia.jpg",
+      "/amizade-neve.jpg",
+      "/amizade-bowling.jpg",
+    ],
     notes:
-      "O escritório vira arquibancada. A rede que ficou. Sem discurso de networking.",
+      "A rede que ficou, dos dois lados. Sem discurso de networking.",
   },
   {
     variant: "statement",
