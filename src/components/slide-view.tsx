@@ -394,6 +394,7 @@ export function SlideView({ slide }: SlideViewProps) {
 
   const hasMedia = Boolean(slide.gallery || slide.figure || slide.video);
   const hasChart = slide.diagram === "craft-shift";
+  const wideVideo = Boolean(slide.video && slide.figureWide);
 
   return (
     <div
@@ -405,25 +406,33 @@ export function SlideView({ slide }: SlideViewProps) {
             : ""
       }`}
     >
-      <div className={hasMedia && hasChart ? "min-w-0 flex-1" : "min-w-0"}>
+      <div
+        className={
+          (hasMedia && hasChart) || wideVideo ? "min-w-0 flex-1" : "min-w-0"
+        }
+      >
         {slide.kicker ? <p className="kicker mb-8">{slide.kicker}</p> : null}
         <h1
           className={`display ${
             hasChart
               ? "max-w-none text-[clamp(1.8rem,3.6vw,3.2rem)]"
-              : hasMedia
-                ? "max-w-xl text-[clamp(2.3rem,5.8vw,5.1rem)]"
-                : "max-w-5xl text-[clamp(2.8rem,7.2vw,6.4rem)]"
+              : wideVideo
+                ? "max-w-none text-[clamp(2.2rem,3.4vw,3.6rem)]"
+                : hasMedia
+                  ? "max-w-xl text-[clamp(2.3rem,5.8vw,5.1rem)]"
+                  : "max-w-5xl text-[clamp(2.8rem,7.2vw,6.4rem)]"
           }`}
         >
           {heading}
         </h1>
         {slide.sub ? (
           <p
-            className={`mt-10 leading-snug text-[var(--muted)] ${
-              hasMedia
-                ? "max-w-xl text-[clamp(1.1rem,2.1vw,1.5rem)]"
-                : "max-w-3xl text-[clamp(1.2rem,2.3vw,1.7rem)]"
+            className={`leading-snug text-[var(--muted)] ${
+              wideVideo
+                ? "mt-6 max-w-sm text-[clamp(1.05rem,1.7vw,1.3rem)]"
+                : hasMedia
+                  ? "mt-10 max-w-xl text-[clamp(1.1rem,2.1vw,1.5rem)]"
+                  : "mt-10 max-w-3xl text-[clamp(1.2rem,2.3vw,1.7rem)]"
             }`}
           >
             {slide.sub}
@@ -469,9 +478,9 @@ export function SlideView({ slide }: SlideViewProps) {
         </div>
       ) : slide.video ? (
         <div
-          className={`relative shrink-0 overflow-hidden rounded-sm shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10 ${
+          className={`relative shrink-0 overflow-hidden rounded-sm bg-black shadow-[0_18px_40px_rgba(0,0,0,0.45)] ring-1 ring-white/10 ${
             slide.figureWide
-              ? "aspect-[1280/802] h-[min(62vh,34rem)]"
+              ? "aspect-video w-[min(58%,40rem)]"
               : "aspect-[9/16] h-[min(72vh,36rem)]"
           }`}
           onClick={(event) => event.stopPropagation()}

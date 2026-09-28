@@ -802,7 +802,7 @@ export const slides: Slide[] = [
   {
     variant: "statement",
     year: "hoje",
-    lines: ["Desenvolvimento de software", "nos dias atuais."],
+    lines: ["Desenvolvimento", "de software", "nos dias atuais."],
     sub: "O Ben falou isso.",
     video: "/ben.mp4",
     figureWide: true,
