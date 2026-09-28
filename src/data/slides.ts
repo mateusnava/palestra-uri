@@ -452,7 +452,7 @@ export const slides: Slide[] = [
     variant: "statement",
     year: "2019",
     lines: ["A graduação", "gera conexões."],
-    sub: "O João falou isso.",
+    sub: "João Vieira, Software Engineer na Sticker Mule.",
     video: "/joao.mp4",
     notes:
       "O João. Deixa o vídeo rodar. Não fale por cima. A graduação como rede, não só diploma.",
@@ -515,7 +515,7 @@ export const slides: Slide[] = [
     variant: "statement",
     year: "2021",
     lines: ["Seja uma boa pessoa."],
-    sub: "O Conrad falou isso.",
+    sub: "Conrad Beach, Software Engineer na Deseret Book.",
     video: "/conrad_legendado.mp4",
     notes:
       "O Conrad, amigo. Deixa o vídeo rodar. Não fale por cima. Quando acabar, segue: tech lead foi comunicação.",
@@ -803,7 +803,7 @@ export const slides: Slide[] = [
     variant: "statement",
     year: "hoje",
     lines: ["Desenvolvimento", "de software", "nos dias atuais."],
-    sub: "O Ben falou isso.",
+    sub: "Ben Kramer, Head of Engineering na Miro.",
     video: "/ben.mp4",
     figureWide: true,
     notes:
