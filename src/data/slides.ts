@@ -794,6 +794,16 @@ export const slides: Slide[] = [
       "A porta do fecho. O disco é a ferramenta da era, não uma aula de chip. Sem AGI. Sem aula de 40 minutos.",
   },
   {
+    variant: "statement",
+    year: "hoje",
+    lines: ["Desenvolvimento de software", "nos dias atuais."],
+    sub: "O Ben falou isso.",
+    video: "/ben.mp4",
+    figureWide: true,
+    notes:
+      "O Ben. Deixa o vídeo rodar. Não fale por cima. O ofício de agora, na voz de quem está nele.",
+  },
+  {
     variant: "list",
     year: "2006 — 2026",
     lines: ["O que eu vi", "se repetir"],
