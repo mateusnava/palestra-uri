@@ -363,11 +363,17 @@ export function SlideView({ slide }: SlideViewProps) {
   }
 
   if (slide.videos?.length) {
+    const singleClip = slide.videos.length === 1;
+
     return (
       <div className="flex min-h-0 flex-1 flex-col justify-center gap-6">
         <h1 className="display text-[clamp(2rem,4vw,3.6rem)]">{heading}</h1>
         <div
-          className="grid min-h-0 grid-cols-2 gap-6 lg:gap-10"
+          className={
+            singleClip
+              ? "mx-auto grid min-h-0 w-full max-w-5xl grid-cols-1"
+              : "grid min-h-0 grid-cols-2 gap-6 lg:gap-10"
+          }
           onClick={(event) => event.stopPropagation()}
         >
           {slide.videos.map((clip) => (

@@ -898,13 +898,9 @@ export const slides: Slide[] = [
         src: "/final.mp4",
         label: "Uma funcionalidade. A importância de planejar.",
       },
-      {
-        src: "/miro-example.mp4",
-        label: "Investigando bug.",
-      },
     ],
     notes:
-      "Duas colunas. Primeiro, planejar uma funcionalidade. Depois, investigar um bug no Miro. Deixa rodar. Não fale por cima.",
+      "Um vídeo. Planejar uma funcionalidade. Deixa rodar. Não fale por cima.",
   },
   {
     variant: "close",
